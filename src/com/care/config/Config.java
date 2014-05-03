@@ -1,8 +1,5 @@
 package com.care.config;
 
-import java.io.File;
-import java.io.Serializable;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
@@ -10,9 +7,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.apache.logging.log4j.core.helpers.FileUtils;
+import org.apache.commons.io.FileUtils;
 
-import com.care.utils.HttpUtil;
 import com.care.utils.XMLUtil;
 
 /**
@@ -23,16 +19,12 @@ import com.care.utils.XMLUtil;
 public class Config {
 	public static final String FILE_NAME = "config.xml";
 	private static Config instance;
-	public List<Oauth> getOauths() {
-		return oauths;
-	}
-
 	@XmlElement(name = "oauth")
 	private List<Oauth> oauths;
 
-	public static void refresh(URI confBaseURI) {
+	public static void refresh(String confBaseURI) {
 		try {
-			instance = XMLUtil.parseXml(confBaseURI.toURL(), Config.class);
+			instance = XMLUtil.parseXml(FileUtils.getFile(confBaseURI), Config.class);
 		} catch (JAXBException e) {
 			System.err.printf("%s: 解析出错!\n", confBaseURI.toString());
 			e.printStackTrace();
@@ -44,8 +36,10 @@ public class Config {
 				System.exit(1);
 		}
 	}
-
-	public static Config getInstance(URI confURI) throws URISyntaxException {
+	public List<Oauth> getOauths() {
+		return oauths;
+	}
+	public static Config getInstance(String confURI) throws URISyntaxException {
 		refresh(confURI);
 		return instance;
 	}
