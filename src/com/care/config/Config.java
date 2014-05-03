@@ -31,12 +31,10 @@ public class Config {
 	private List<Oauth> oauths;
 
 	public static void refresh(URI confBaseURI) {
-		File xmlFile = null;
 		try {
-			xmlFile = FileUtils.fileFromURI(confBaseURI);
-			instance = XMLUtil.parseXml(xmlFile, Config.class);
+			instance = XMLUtil.parseXml(confBaseURI.toURL(), Config.class);
 		} catch (JAXBException e) {
-			System.err.printf("%s: 解析出错!\n", xmlFile.toString());
+			System.err.printf("%s: 解析出错!\n", confBaseURI.toString());
 			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
