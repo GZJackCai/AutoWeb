@@ -1,5 +1,6 @@
 package com.care.listener;
 
+import java.io.File;
 import java.net.URI;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -32,29 +33,29 @@ public class Bootstarp implements ServletContextListener {
 	private Logger log = LoggerFactory.getLogger(getClass());
 	private static ApplicationContext ctx;
 	private static Config config;
+	private static String spt = File.separator;
 
 	public void contextInitialized(ServletContextEvent event) {
 		try {
 			Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
 			ServletContext servletContext = event.getServletContext();
-			//-DconfURI=
+			// -DconfURI=
 			String rootURIStr = System.getProperty("confURI", servletContext.getInitParameter("confURI"));
 			if (StringUtils.isEmpty(rootURIStr)) {
-				Path path = FileSystems.getDefault().getPath(servletContext.getRealPath("/") );
-				rootURIStr = "file://"+path.getParent().toString() + "/config";
+				Path path = FileSystems.getDefault().getPath(servletContext.getRealPath(spt));
+				rootURIStr = "file://" + path.getParent().toString() + spt + "config";
 			}
 			log.info("Loading RootURIStr:{}", rootURIStr);
 			// 初始化conf.xml配置
-			URI confURI = HttpUtil.buildURI(rootURIStr + "/" + Config.FILE_NAME, null);
+			URI confURI = HttpUtil.buildURI(rootURIStr + spt + Config.FILE_NAME, null);
 			config = Config.getInstance(confURI);
 			log.info("Config:{}", JSONUtil.toJson(config));
-			
-			
+
 			// 初始化spring容器
-			String springXml =  rootURIStr + "/spring.xml";
+			String springXml = rootURIStr + spt + "spring.xml";
 			log.info("Loading spring:{}", springXml);
 			Resource res = new UrlResource(springXml);
-			ctx = new GenericXmlApplicationContext(res );
+			ctx = new GenericXmlApplicationContext(res);
 			log.info("ApplicationContext:{}", JSONUtil.toJson(ctx.getBeanDefinitionNames()));
 		} catch (Exception e) {
 			log.error("contextInitialized", e);
