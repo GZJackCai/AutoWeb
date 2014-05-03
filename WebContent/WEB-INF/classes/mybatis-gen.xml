@@ -31,17 +31,48 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
-
+		<!-- ui -->
 		<table tableName="ui_corp_desc" domainObjectName="UICorpDesc" >
 			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
 			<columnOverride column="intro" jdbcType="VARCHAR"/>
 			<columnOverride column="big_events" jdbcType="VARCHAR"/>
 			<columnOverride column="leader_says" jdbcType="VARCHAR"/>
 		</table>
+		<table tableName="ui_adver" domainObjectName="UIAdver"/>
+		<table tableName="ui_knowledge" domainObjectName="UIKnowledge"></table>
+		<table tableName="ui_link" domainObjectName="UILink"></table>
+		<table tableName="ui_news" domainObjectName="UINews"></table>
+		<table tableName="ui_quick_sales" domainObjectName="UIQuickSales"></table>
+		<table tableName="ui_video" domainObjectName="UIVideo"></table>
+		<table tableName="ui_web_desc" domainObjectName="UIWebDesc"></table>
 		
+		
+		<!-- user -->
+		<table tableName="user" domainObjectName="User"></table>
 		<table tableName="user_role" domainObjectName="UserRole"></table>
 		<table tableName="user_open_id" domainObjectName="UserOpenId"></table>
-		<table tableName="user" domainObjectName="User"></table>
+		<table tableName="user_favorite" domainObjectName="UserFavorite"></table>
+		<table tableName="user_operate" domainObjectName="UserOperate"></table>
+		<table tableName="user_operate_group" domainObjectName="UserOperateGroup"></table>
+		<table tableName="user_status" domainObjectName="UserStatus"></table>
+		
+		
+		<!-- auto -->
+		<table tableName="auto" domainObjectName="Auto"></table>
+		<table tableName="auto_brand" domainObjectName="AutoBrand"></table>
+		<table tableName="auto_fault" domainObjectName="AutoFault"></table>
+		<table tableName="auto_fault_type" domainObjectName="AutoFaultType"></table>
+		<table tableName="auto_quantity" domainObjectName="AutoQuantity"></table>
+		<table tableName="auto_type" domainObjectName="AutoType"></table>
+		<table tableName="auto_widget" domainObjectName="AutoWidget"></table>
+		<table tableName="auto_widget_type" domainObjectName="AutoWidgetType"></table>
+		<table tableName="auto_maintenance_appoint" domainObjectName="AutoMaintenanceAppoint"></table>
+		<!-- common -->
+		<table tableName="city" domainObjectName="City"></table>
+		<table tableName="country" domainObjectName="Country"></table>
+		<table tableName="order" domainObjectName="Order"></table>
+		<table tableName="order_item" domainObjectName="OrderItem"></table>
+		
 		
 	</context>
 </generatorConfiguration>
