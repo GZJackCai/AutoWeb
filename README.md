@@ -7,6 +7,10 @@ github地址
     https://github.com/ijie/AutoWeb
     https://github.com/ijie/AutoWeb.git
     
+    info@brrhea.com 
+    brrhea123
+
+    
 git文档
 -------------------
 http://www.bootcss.com/p/git-guide/

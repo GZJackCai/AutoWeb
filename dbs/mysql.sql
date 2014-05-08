@@ -74,6 +74,26 @@ CREATE TABLE `auto_fault_type` (
 
 /*Data for the table `auto_fault_type` */
 
+/*Table structure for table `auto_maintenance_appoint` */
+
+DROP TABLE IF EXISTS `auto_maintenance_appoint`;
+
+CREATE TABLE `auto_maintenance_appoint` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `u_id` int(10) DEFAULT NULL COMMENT 'user.id',
+  `begin_time` datetime NOT NULL COMMENT '开始时间',
+  `end_time` datetime NOT NULL COMMENT '结束时间',
+  `auto_number` varchar(20) NOT NULL COMMENT '汽车牌号',
+  `auto_vendor` varchar(20) DEFAULT NULL COMMENT '汽车厂商',
+  `phone` varchar(20) NOT NULL COMMENT '手机',
+  `km` int(10) DEFAULT NULL COMMENT '里数',
+  `desc` varchar(100) DEFAULT NULL COMMENT '补充描述',
+  `img` varchar(200) DEFAULT NULL COMMENT '图片',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `auto_maintenance_appoint` */
+
 /*Table structure for table `auto_quantity` */
 
 DROP TABLE IF EXISTS `auto_quantity`;
@@ -131,6 +151,19 @@ CREATE TABLE `auto_widget_type` (
 
 /*Data for the table `auto_widget_type` */
 
+/*Table structure for table `city` */
+
+DROP TABLE IF EXISTS `city`;
+
+CREATE TABLE `city` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `code` varchar(10) DEFAULT NULL COMMENT '区号',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `city` */
+
 /*Table structure for table `country` */
 
 DROP TABLE IF EXISTS `country`;
@@ -151,11 +184,12 @@ CREATE TABLE `order` (
   `series_id` varchar(120) NOT NULL COMMENT '序列号（日期+产品编号+客户ID+ID）',
   `c_id` int(10) NOT NULL COMMENT '客户ID',
   `time` datetime NOT NULL COMMENT '时间',
-  `status` int(10) NOT NULL COMMENT '状态',
+  `status` int(10) NOT NULL COMMENT '状态。0：未付款；1：未发货；2：已发货；3：确认收货；4：已结单；-1：取消订单',
   `desc` varchar(200) DEFAULT NULL COMMENT '订单简单说明',
-  `ship_time` datetime DEFAULT NULL COMMENT '发货说明',
+  `ship_time` datetime DEFAULT NULL COMMENT '发货时间',
   `ship_id` int(10) DEFAULT NULL COMMENT '物流id',
-  `total_price` float DEFAULT NULL COMMENT '合计',
+  `total_price` float NOT NULL COMMENT '合计',
+  `pay_type` int(5) NOT NULL COMMENT '支付方式',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -306,6 +340,19 @@ CREATE TABLE `user` (
 
 insert  into `user`(`id`,`role_id`,`nick`,`name`,`email`,`phone`,`password`,`time`,`open_id`) values (1,1,'管理员高杰','gaojie',NULL,'18910221510','123','2014-04-27 20:33:27',NULL);
 
+/*Table structure for table `user_favorite` */
+
+DROP TABLE IF EXISTS `user_favorite`;
+
+CREATE TABLE `user_favorite` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `u_id` int(10) DEFAULT NULL COMMENT '用户ID',
+  `p_id` int(10) DEFAULT NULL COMMENT '商品ID',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `user_favorite` */
+
 /*Table structure for table `user_open_id` */
 
 DROP TABLE IF EXISTS `user_open_id`;
@@ -329,6 +376,7 @@ CREATE TABLE `user_operate` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
   `name` varchar(100) NOT NULL COMMENT '操作名字',
   `group` int(10) DEFAULT NULL COMMENT '操作组',
+  `role_id` int(10) DEFAULT NULL COMMENT '角色ID',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户操作表';
 
@@ -351,9 +399,9 @@ CREATE TABLE `user_operate_group` (
 DROP TABLE IF EXISTS `user_role`;
 
 CREATE TABLE `user_role` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `type` int(10) unsigned NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '角色ID',
+  `name` varchar(100) NOT NULL COMMENT '角色名字',
+  `type` int(10) unsigned NOT NULL COMMENT '角色类型编号',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='角色';
 
@@ -370,7 +418,7 @@ CREATE TABLE `user_status` (
   `name` varchar(50) NOT NULL COMMENT '用户状态',
   `level` int(10) DEFAULT NULL COMMENT '用户等级',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户状态和级别\r\n';
 
 /*Data for the table `user_status` */
 
