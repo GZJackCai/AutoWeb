@@ -19,8 +19,6 @@ import com.care.utils.XMLUtil;
 public class Config {
 	public static final String FILE_NAME = "config.xml";
 	private static Config instance;
-	@XmlElement(name = "oauth")
-	private List<Oauth> oauths;
 
 	public static void refresh(String confBaseURI) {
 		try {
@@ -36,9 +34,6 @@ public class Config {
 				System.exit(1);
 		}
 	}
-	public List<Oauth> getOauths() {
-		return oauths;
-	}
 	public static Config getInstance(String confURI) throws URISyntaxException {
 		refresh(confURI);
 		return instance;
@@ -48,13 +43,5 @@ public class Config {
 		return instance;
 	}
 
-	public Oauth getOauth(String name) {
-		for (Oauth auth : oauths) {
-			if (auth.getName().equals(name)) {
-				return auth;
-			}
-		}
-		return null;
-	}
 
 }
