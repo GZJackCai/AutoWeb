@@ -1,5 +1,6 @@
 package com.care.service.ui;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -7,6 +8,8 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.care.domain.SearchItem;
+import com.care.domain.UIWidget;
+import com.care.domain.UIWidgetType;
 import com.care.mybatis.bean.AutoBrand;
 import com.care.mybatis.bean.AutoType;
 import com.care.mybatis.bean.AutoTypeExample;
@@ -14,6 +17,7 @@ import com.care.mybatis.bean.AutoWidget;
 import com.care.mybatis.bean.AutoWidgetExample;
 import com.care.mybatis.bean.AutoWidgetType;
 import com.care.mybatis.bean.AutoWidgetTypeExample;
+import com.care.mybatis.bean.AutoWidgetTypeExample.Criteria;
 import com.care.mybatis.bean.AutoYear;
 import com.care.mybatis.bean.AutoYearExample;
 import com.care.mybatis.dao.AutoBrandMapper;
@@ -60,8 +64,11 @@ public class UIServiceImpl implements UIService {
 
 	@Override
 	public List<AutoType> getAutoTypes(int brandId) {
+		
 		AutoTypeExample query = new AutoTypeExample();
-		query.createCriteria().andBrandIdEqualTo(brandId);
+		if(brandId > 0){
+			query.createCriteria().andBrandIdEqualTo(brandId);			
+		}
 		List<AutoType> list = autoTypeMapper.selectByExample(query);
 		return list;
 	}
@@ -69,7 +76,9 @@ public class UIServiceImpl implements UIService {
 	@Override
 	public List<AutoYear> getAutoYears(int autoTypeId) {
 		AutoYearExample query = new AutoYearExample();
-		query.createCriteria().andTypeIdEqualTo(autoTypeId);
+		if(autoTypeId > 0){
+			query.createCriteria().andTypeIdEqualTo(autoTypeId);
+		}
 		List<AutoYear> list = autoYearMapper.selectByExample(query);
 		return list;
 	}
@@ -77,7 +86,9 @@ public class UIServiceImpl implements UIService {
 	@Override
 	public List<AutoWidgetType> getAutoWidgetTypes(int autoYearId) {
 		AutoWidgetTypeExample query = new AutoWidgetTypeExample();
-		query.createCriteria().andYearIdEqualTo(autoYearId);
+		if (autoYearId > 0){
+			query.createCriteria().andYearIdEqualTo(autoYearId);			
+		}
 		List<AutoWidgetType> list = autoWidgetTypeMapper.selectByExample(query);
 		return list;
 	}
@@ -85,9 +96,44 @@ public class UIServiceImpl implements UIService {
 	@Override
 	public List<AutoWidget> getAutoWidgets(int widgetTypeId) {
 		AutoWidgetExample query = new AutoWidgetExample();
-		query.createCriteria().andTypeEqualTo(widgetTypeId);
+		if (widgetTypeId > 0){
+			query.createCriteria().andTypeEqualTo(widgetTypeId);			
+		}
 		List<AutoWidget> list = autoWidgetMapper.selectByExample(query);
 		return list;
+	}
+
+	@Override
+	public List<UIWidgetType> listAutoWidgetTypes( int sStatus, Boolean hot, boolean face) {
+	
+		List<UIWidgetType> ret = new ArrayList<UIWidgetType>();
+		
+		AutoWidgetTypeExample query = new AutoWidgetTypeExample();
+		Criteria criteria1 = query.createCriteria();
+		criteria1.andSStatusEqualTo(sStatus).andFaceEqualTo(face);
+		if(hot != null){
+			criteria1.andHotEqualTo(hot);
+		}
+		List<AutoWidgetType> list = autoWidgetTypeMapper.selectByExample(query);
+		for(AutoWidgetType type : list){
+			String _type = type.getName();
+			AutoWidgetExample query2 = new AutoWidgetExample();
+			com.care.mybatis.bean.AutoWidgetExample.Criteria criteria2 = query2.createCriteria();
+			criteria2.andFaceEqualTo(face);
+			if(hot != null){
+				criteria2.andHotEqualTo(hot);
+			}
+			criteria2.andTypeEqualTo(type.getId());
+			List<AutoWidget> autoWidgets = autoWidgetMapper.selectByExample(query2);
+			List<UIWidget> _uiWidgets = new ArrayList<UIWidget>(autoWidgets.size());
+			for(AutoWidget aw : autoWidgets){
+				_uiWidgets.add(new UIWidget(aw.getName(), aw.getImg()));
+			}
+			UIWidgetType e = new UIWidgetType(_type, _uiWidgets);
+			e.setsStatus(type.getsStatus());
+			ret.add(e);
+		}
+		return ret;
 	}
 	
 	

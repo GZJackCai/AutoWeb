@@ -3,6 +3,7 @@ package com.care.service.ui;
 import java.util.List;
 
 import com.care.domain.SearchItem;
+import com.care.domain.UIWidgetType;
 import com.care.mybatis.bean.AutoBrand;
 import com.care.mybatis.bean.AutoType;
 import com.care.mybatis.bean.AutoWidget;
@@ -22,5 +23,9 @@ public interface UIService {
 	List<AutoWidgetType> getAutoWidgetTypes(int autoYearId);
 
 	List<AutoWidget> getAutoWidgets(int widgetTypeId);
+
+
+	List<UIWidgetType> listAutoWidgetTypes( int sStatus, Boolean hot,
+			boolean face);
 
 }
