@@ -1,10 +1,9 @@
 package com.care.config;
 
+import java.io.Serializable;
 import java.net.URISyntaxException;
-import java.util.List;
 
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.apache.commons.io.FileUtils;
@@ -16,7 +15,12 @@ import com.care.utils.XMLUtil;
  * @author gaojie/joy gaojie314@gmail.com http://my.oschina.net/u/139611
  */
 @XmlRootElement
-public class Config {
+public class Config implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final String FILE_NAME = "config.xml";
 	private static Config instance;
 

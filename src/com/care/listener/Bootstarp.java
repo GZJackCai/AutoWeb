@@ -43,7 +43,7 @@ public class Bootstarp implements ServletContextListener {
 			log.info("Loading confPath:{}", confPath);
 			// 初始化conf.xml配置
 			config = Config.getInstance(confPath+spt+"config.xml");
-			log.info("Config:{}", JSONUtil.toJson(config));
+			//log.info("Config:{}", JSONUtil.toJson(config));
 
 			// 初始化spring容器
 			String springXml = "file://"+confPath + spt + "spring.xml";
