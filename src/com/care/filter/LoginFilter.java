@@ -21,7 +21,7 @@ import com.care.config.Constant;
 /**
  * Servlet Filter implementation class LoginFilter
  */
-@WebFilter(description = "登陆校验过滤器", urlPatterns = { "jaxrs/*" })
+@WebFilter(description = "登陆校验过滤器", urlPatterns = { "/jaxrs/*" })
 public class LoginFilter implements Filter {
 	private static Logger log = LoggerFactory.getLogger(Config.class);
     /**

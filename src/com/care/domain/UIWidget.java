@@ -1,27 +1,24 @@
 package com.care.domain;
 
+import com.care.mybatis.bean.AutoWidget;
+
 public class UIWidget {
-	private String name;
-	private String img;
- 
-	public UIWidget(String name, String imgUrl) {
+	private AutoWidget widget;
+
+	public UIWidget(AutoWidget widget) {
 		super();
-		this.name = name;
-		this.img = imgUrl;
+		this.widget = widget;
 	}
-	public String getImg() {
-		return img;
+
+	public AutoWidget getWidget() {
+		return widget;
 	}
-	public void setImg(String img) {
-		this.img = img;
+
+	public void setWidget(AutoWidget widget) {
+		this.widget = widget;
 	}
+ 
 	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
 	
 	
 }

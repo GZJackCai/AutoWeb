@@ -15,6 +15,8 @@ public interface UIService {
 	SearchItem getSearchItem();
 
 	List<AutoBrand> getAllBrands();
+	
+	AutoBrand getBrandById(int brandId);
 
 	List<AutoType> getAutoTypes(int brandId);
 
@@ -27,5 +29,7 @@ public interface UIService {
 
 	List<UIWidgetType> listAutoWidgetTypes( int sStatus, Boolean hot,
 			boolean face);
+
+	List<UIWidgetType> allAutoWidgets();
 
 }

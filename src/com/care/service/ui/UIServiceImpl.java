@@ -127,7 +127,7 @@ public class UIServiceImpl implements UIService {
 			List<AutoWidget> autoWidgets = autoWidgetMapper.selectByExample(query2);
 			List<UIWidget> _uiWidgets = new ArrayList<UIWidget>(autoWidgets.size());
 			for(AutoWidget aw : autoWidgets){
-				_uiWidgets.add(new UIWidget(aw.getName(), aw.getImg()));
+				_uiWidgets.add(new UIWidget(aw ));
 			}
 			UIWidgetType e = new UIWidgetType(_type, _uiWidgets);
 			e.setsStatus(type.getsStatus());
@@ -135,7 +135,32 @@ public class UIServiceImpl implements UIService {
 		}
 		return ret;
 	}
-	
-	
-	
+
+	@Override
+	public List<UIWidgetType> allAutoWidgets() {
+		List<UIWidgetType> ret = new ArrayList<UIWidgetType>();
+		AutoWidgetTypeExample query = null;
+		List<AutoWidgetType> list = autoWidgetTypeMapper.selectByExample(query );
+		for(AutoWidgetType type : list){
+			String _type = type.getName();
+			AutoWidgetExample query2 = new AutoWidgetExample();
+			com.care.mybatis.bean.AutoWidgetExample.Criteria criteria2 = query2.createCriteria();
+			criteria2.andTypeEqualTo(type.getId());
+			List<AutoWidget> autoWidgets = autoWidgetMapper.selectByExample(query2);
+			List<UIWidget> _uiWidgets = new ArrayList<UIWidget>(autoWidgets.size());
+			for(AutoWidget aw : autoWidgets){
+				_uiWidgets.add(new UIWidget(aw ));
+			}
+			UIWidgetType e = new UIWidgetType(_type, _uiWidgets);
+			e.setsStatus(type.getsStatus());
+			ret.add(e);
+		}
+		return ret;
+	}
+
+	@Override
+	public  AutoBrand  getBrandById(int brandId) {
+		AutoBrand autoBrand = autoBrandMapper.selectByPrimaryKey(brandId);
+		return autoBrand;
+	}
 }

@@ -1,2 +1,5 @@
 com.care.wink.UserAction
 com.care.wink.UIAction
+com.care.wink.WidgetAction
+com.care.wink.BrandAction
+com.care.wink.TypeAction

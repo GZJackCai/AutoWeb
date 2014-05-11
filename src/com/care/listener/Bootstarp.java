@@ -46,13 +46,18 @@ public class Bootstarp implements ServletContextListener {
 			//log.info("Config:{}", JSONUtil.toJson(config));
 
 			// 初始化spring容器
-			String springXml = "file://"+confPath + spt + "spring.xml";
+			String os = System.getProperty("os.name");
+			String pre = "";
+			if(os.equals("Linux")){
+				pre = "file://";
+			}
+			String springXml = pre  + confPath + spt + "spring.xml";
 			log.info("Loading spring:{}", springXml);
 			ctx = new FileSystemXmlApplicationContext(springXml);
 			log.info("ApplicationContext:{}", JSONUtil.toJson(ctx.getBeanDefinitionNames()));
 		} catch (Exception e) {
 			log.error("contextInitialized", e);
-			System.exit(-1);
+			//System.exit(-1);
 		}
 	}
 
