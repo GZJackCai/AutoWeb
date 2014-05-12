@@ -262,7 +262,7 @@
 				var div0_dd = $("<dd/>");
 				div0_dl.append(div0_dd);
 				$.each(v.widgets, function(k, v){
-					div0_dd.append($("<a href=\"<%=request.getContextPath()%>/jaxrs/brand/" + k + "\" target=\"_blank\">"+ v.widget.name +"</a><em>|</em>"));
+					div0_dd.append($("<a href=\"<%=request.getContextPath()%>/jaxrs/brand/"+ v.widget.id +"\" target=\"_blank\">"+ v.widget.name +"</a><em>|</em>"));
 				});
 					
 				
@@ -279,7 +279,7 @@
 					
 					var div1_ul = $("<ul/>");
 					$.each(v.widgets, function(k, v){
-						var li = $("<li><a href=\"<%=request.getContextPath()%>/jaxrs/brand/" + k + " target=\"_blank\"> <img alt=\""+v.widget.name+"\" src="+v.widget.img+" height=\"55\" width=\"55\" >"+v.widget.name+"</img></a></li>");
+						var li = $("<li><a href=\"<%=request.getContextPath()%>/jaxrs/brand/"+ v.widget.id +"\" target=\"_blank\"> <img alt=\""+v.widget.name+"\" src="+v.widget.img+" height=\"55\" width=\"55\" >"+v.widget.name+"</img></a></li>");
 						div1_ul.append(li)
 					})
 					div_img.append(div1_ul)

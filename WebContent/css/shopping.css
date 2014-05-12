@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+
+.shopping_title{ height:30px; line-height:30px; border:1px solid #e5e5e5; padding-left:10px; font-size:14px; font-weight:bold; margin-top:10px;}
+.shopping_th{ width:988px; background:#eeeeee; border:1px solid #e5e5e5; border-bottom:none; height:30px;}
+.shopping_th li{ float:left; font-size:12px; color:#999999; line-height:30px; text-align:center;}
+.shopping_th li.sth_01 label{ color:#999999; padding:0 5px;}
+.sth_01{ width:80px;}
+.sth_02{ width:360px;}
+.sth_03{ width:154px;}
+.sth_04{ width:170px; text-align:inherit;}
+.sth_05{ width:120px;}
+.sth_06{ width:100px;}
+.std_01{ width:45px; padding-left:17px; display:  display: table-cell; vertical-align: middle;}
+.std_02 a{color:#0033cc;}
+.std_02{ width:340px; padding:10px 0; }
+.std_03{ width:160px; text-align:center; color:#e70000;}
+.std_04{ width:150px;text-align:center;}
+.std_05{ width:100px;}
+.std_06{ width:100px; color:#0033cc;text-align:center; }
+.std_06 a{color:#0033cc; }
+.shopping_list{ width:990px;}
+.std_05 ul{ padding:0 0 0 17px;}
+.std_05 ul li{ float:left;}
+.std_05 ul li a{ border:1px solid #dadada; width:15px; line-height:15px; height:15px; display:inline-block; margin:4px 1px 0 1px; text-align:center;}
+.std_05 ul li input{ width:35px; height:20px; line-height:20px; text-align:center;}
+.shopping_list tr{ border:1px solid #e5e5e5;}
+.shopping_list td{ padding-top:20px; padding-bottom:20px;}
+
+.heji{ border:1px solid #e5e5e5; border-top:none; height:60px;}
+.sancu{ background:url(../images/sanchu.gif) no-repeat scroll 0 2px; height:13px; padding-left:15px; margin:20px 0 0 10px;}
+.monye_heji{ margin:15px 10px 0 0;}
+.monye_heji .spsl{ font-size:14px; color:#ff3333; padding-right:10px;}
+.monye_heji .jg{ font-size:20px; color:#ff3333; padding-left:10px;}
+.shbox_btn{ margin:10px 0; height:40px;}
+.jxgw_btn{ background:#ffffff; border:1px solid #dadada; line-height:36px; height:36px; width:90px; display:block; text-align:center;}
+.settlement_btn{ background:#e2050c; height:38px; width:135px; line-height:38px; text-align:center; display:block; color:#ffffff; font-size:18px; font-weight:bold;-moz-border-radius:5px; -webkit-border-radius:5px;border-radius:5px;}
+.settlement_btn:hover{ color:#ffffff; background:#be0409;}

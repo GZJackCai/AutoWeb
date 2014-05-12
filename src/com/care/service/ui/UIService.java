@@ -16,7 +16,7 @@ public interface UIService {
 
 	List<AutoBrand> getAllBrands();
 	
-	AutoBrand getBrandById(int brandId);
+	AutoBrand getAutoBrandById(int brandId);
 
 	List<AutoType> getAutoTypes(int brandId);
 
@@ -31,5 +31,13 @@ public interface UIService {
 			boolean face);
 
 	List<UIWidgetType> allAutoWidgets();
+
+	AutoWidget getWidgetByKey(int widgetId);
+
+	AutoWidgetType getWidgetTypeByKey(Integer type);
+
+	AutoType getAutoTypeById(Integer autoType);
+
+	AutoWidgetType getAutoWidgetType(Integer type);
 
 }

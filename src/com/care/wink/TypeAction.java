@@ -21,10 +21,10 @@ public class TypeAction extends BaseAction {
 		
 		UIService uiService = getCtx().getBean(UIService.class);
 		List<AutoType> autoTypes = uiService.getAutoTypes(brandId);
-		AutoBrand autoBrand = uiService.getBrandById(brandId);
+		AutoBrand autoBrand = uiService.getAutoBrandById(brandId);
 		request.setAttribute("autoBrand", autoBrand);
 		request.setAttribute("autoTypes", autoTypes);
-		request.setAttribute("brandId", brandId);
+		//request.setAttribute("brandId", brandId);
 		request.setAttribute("widgetId", widgetId);
 		//查詢所有的配件信息
 		request.getRequestDispatcher("/typeList.jsp").forward(request, response);

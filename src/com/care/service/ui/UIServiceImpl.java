@@ -159,8 +159,28 @@ public class UIServiceImpl implements UIService {
 	}
 
 	@Override
-	public  AutoBrand  getBrandById(int brandId) {
+	public  AutoBrand  getAutoBrandById(int brandId) {
 		AutoBrand autoBrand = autoBrandMapper.selectByPrimaryKey(brandId);
 		return autoBrand;
+	}
+
+	@Override
+	public AutoWidget getWidgetByKey(int widgetId) {
+		return autoWidgetMapper.selectByPrimaryKey(widgetId);
+	}
+
+	@Override
+	public AutoWidgetType getWidgetTypeByKey(Integer type) {
+		return 	autoWidgetTypeMapper.selectByPrimaryKey(type);
+	}
+
+	@Override
+	public AutoType getAutoTypeById(Integer autoType) {
+		return autoTypeMapper.selectByPrimaryKey(autoType);
+	}
+
+	@Override
+	public AutoWidgetType getAutoWidgetType(Integer type) {
+		return autoWidgetTypeMapper.selectByPrimaryKey(type);
 	}
 }

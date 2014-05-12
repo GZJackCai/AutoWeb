@@ -29,10 +29,8 @@
     	List<AutoType> autoTypes = (List<AutoType>)request.getAttribute("autoTypes");
     	for(AutoType type : autoTypes){
     		%>
-    		
-    			<li><a href="#" target="_blank"><%= type.getName() %> &gt;&gt; </a></li>	
+    			<li><a href="<%=request.getContextPath()%>/jaxrs/widget/detail/<%= request.getAttribute("widgetId") %>" target="_blank"><%= type.getName() %> &gt;&gt; </a></li>	
     		<%
-    		
     	}
     	%>
     </ul>
