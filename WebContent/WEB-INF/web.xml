@@ -10,10 +10,10 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-  <context-param>	
+  <!-- <context-param>	
   	<param-name>confPath</param-name>
-  	<param-value>/media/gaojie/Dev/workspace-jee/AutoWeb/config</param-value>
-  </context-param>
+  	<param-value>E:\work\auto_web\AutoWeb\config</param-value>
+  </context-param> -->
   
   <icon>
     <small-icon>

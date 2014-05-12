@@ -21,8 +21,5 @@ public class WidgetAction extends BaseAction {
 		List<UIWidgetType> widgetList = uiService.allAutoWidgets();
 		request.setAttribute("widgetList", widgetList);
 		request.getRequestDispatcher("/widgetList.jsp").forward(request,response);
-		
 	}
-	
-	
 }

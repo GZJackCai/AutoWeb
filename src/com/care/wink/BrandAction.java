@@ -1,6 +1,7 @@
 package com.care.wink;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,13 +28,14 @@ public class BrandAction extends BaseAction {
 		UIService uiService = getCtx().getBean(UIService.class);
 		List<AutoBrand> brandList = uiService.getAllBrands();
 		if(CollectionUtils.isNotEmpty(brandList)){
-			String pinyin = brandList.get(0).getPinyin();
-			List<AutoBrand> list = widgetListMap.get(pinyin);
-			if(list == null){
-				list = brandList;
-				widgetListMap.put(pinyin, list);
-			}else{
-				list.addAll(brandList);
+			for(AutoBrand b : brandList){
+				String k = b.getPinyin();
+				List<AutoBrand> list = widgetListMap.get(b.getPinyin());
+				if(list == null){
+					list = new ArrayList<AutoBrand>();
+					widgetListMap.put(k, list);
+				}
+				list.add(b);
 			}
 		}
 		request.setAttribute("widgetId", widgetId);

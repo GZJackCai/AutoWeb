@@ -288,7 +288,7 @@
 	<div class="fitting_title">
     	<h1>汽配分类</h1>
     </div>
-    <table class="fitting_box_PP">
+    <table class="fitting_box_PP" style="width:100%">
     	<% 
     	
     	Map<String, List<AutoBrand>> widgetList =(Map<String, List<AutoBrand>>) request.getAttribute("widgetListMap");
@@ -301,9 +301,7 @@
     			<%
     				for(AutoBrand  brand : e.getValue()){
     					%>
-    					<li>
 							<a href="<%=request.getContextPath()%>/jaxrs/type/<%= brand.getId() %>-<%= request.getAttribute("widgetId") %>" target="_blank"><%= brand.getName()%></a><em>|</em>
-    					</li>
     					<%
     				}
     			%>

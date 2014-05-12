@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/head.jsp"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -38,87 +42,23 @@
 	<div class="cl nav box">
 		<ul class="nav_list" id="nav_all">
 			<li>网站首页</li>
-			<li><label>集团资料</label>
+			<li><label>集团资讯</label>
 				<div class="vicenav_01 hide ch_menu">
 					<div class="vicenav_lf fl"></div>
 					<div class="vicenav_box fl">
-						<a href="#">公司概况</a> <a href="#">公司概况</a> <a href="#">公司概况</a>
+						<a href="#">公司概况</a> <a href="#">公司新闻</a> <a href="#">领导致辞</a><a href="#">荣誉展示</a>
 					</div>
 					<div class="vicenav_rgt fr"></div>
 				</div></li>
-			<li><label>配件大全</label>
-				<div class="vicenav_02 hide ch_menu">
-					<div class="vicenav_lf fl"></div>
-					<div class="vicenav_box fl">
-						<a href="#">公司概况2</a> <a href="#">公司概况3</a> <a href="#">公司概况4</a>
-					</div>
-					<div class="vicenav_rgt fr"></div>
-				</div></li>
-			<li><label>维修预约</label>
-				<div class="vicenav_03 hide ch_menu">
-					<div class="vicenav_lf fl"></div>
-					<div class="vicenav_box fl">
-						<a href="#">公司概况5</a> <a href="#">公司概况6</a> <a href="#">公司概况7</a>
-					</div>
-					<div class="vicenav_rgt fr"></div>
-				</div></li>
-			<li><label>维修视频</label>
-				<div class="vicenav_04 hide ch_menu">
-					<div class="vicenav_lf fl"></div>
-					<div class="vicenav_box fl">
-						<a href="#">公司概况</a> <a href="#">公司概况</a> <a href="#">公司概况</a>
-					</div>
-					<div class="vicenav_rgt fr"></div>
-				</div></li>
-			<li><label>会员中心</label>
-				<div class="vicenav_05 hide ch_menu">
-					<div class="vicenav_lf fl"></div>
-					<div class="vicenav_box fl">
-						<a href="#">公司概况</a> <a href="#">公司概况</a> <a href="#">公司概况</a>
-					</div>
-					<div class="vicenav_rgt fr"></div>
-				</div></li>
-			<li><label>汽车常识</label>
-				<div class="vicenav_06 hide ch_menu">
-					<div class="vicenav_lf fl"></div>
-					<div class="vicenav_box fl">
-						<a href="#">公司概况</a> <a href="#">公司概况</a> <a href="#">公司概况</a>
-					</div>
-					<div class="vicenav_rgt fr"></div>
-				</div></li>
-			<li><label>配件销售</label>
-				<div class="vicenav_07 hide ch_menu">
-					<div class="vicenav_lf fl"></div>
-					<div class="vicenav_box fl">
-						<a href="#">公司概况</a> <a href="#">公司概况</a> <a href="#">公司概况</a>
-					</div>
-					<div class="vicenav_rgt fr"></div>
-				</div></li>
-			<li><label>配件生产</label>
-				<div class="vicenav_08 hide ch_menu">
-					<div class="vicenav_lf fl"></div>
-					<div class="vicenav_box fl">
-						<a href="#">公司概况</a> <a href="#">公司概况</a> <a href="#">公司概况</a>
-					</div>
-					<div class="vicenav_rgt fr"></div>
-				</div></li>
-			<li><label>联网维修</label>
-				<div class="vicenav_09 hide ch_menu">
-					<div class="vicenav_lf fl"></div>
-					<div class="vicenav_box fl">
-						<a href="#">公司概况</a> <a href="#">公司概况</a> <a href="#">公司概况</a>
-					</div>
-					<div class="vicenav_rgt fr"></div>
-				</div></li>
-			<li><label>联系我们</label>
-				<div class="vicenav_10 hide ch_menu">
-					<div class="vicenav_lf fl"></div>
-					<div class="vicenav_box fl">
-						<a href="#">公司概况</a> <a href="#">公司概况</a> <a href="#">公司概况</a>
-					</div>
-					<div class="vicenav_rgt fr"></div>
-				</div></li>
-		</ul>
+			<li>配件大全</li>
+			<li>维修预约</li>
+			<li>维修视频</li>
+			<li>会员中心</li>
+			<li>汽车常识</li>
+			<li>配件销售</li>
+			<li>配件生产</li>
+			<li>联网维修</li>
+			<li>联系我们</li>
 	</div>
 	<!--导航 结束-->
 	<!--搜索 开始-->
@@ -128,7 +68,7 @@
 		</div>
 		<a class="search_btn fl" href="#">搜索</a>
 		<div class="search_rgt fr">
-			<!--选择品牌 start-->
+			<!--选择品牌 start
 			<div class="mdsch mdsch_01">
 				<div class="mdsch_box">
 					<ul class="mdsch_cnt">
@@ -217,8 +157,6 @@
 					</ul>
 				</div>
 			</div>
-			<!--选择品牌 end-->
-			<!--选择车系 start-->
 			<div class="mdsch mdsch_02">
 				<div class="mdsch_box02">
 					<ul class="mdsch_cnt">
@@ -241,7 +179,8 @@
 					</ul>
 				</div>
 			</div>
-			<!--选择车系 end-->
+			 选择车系 end-->
+			 
 			<strong>配件直达</strong> 
 			
 			<select class="text" id = "searchAutoBrand">
@@ -491,44 +430,44 @@
 					<li><a href="#" target="_blank"><img
 							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img04.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img05.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img06.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img07.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img08.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img09.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img04.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img05.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img06.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img07.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img08.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img09.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img04.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img05.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img06.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
-							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
+							src="images/link_img07.jpg" width="88" height="30" alt="" /></a></li>
 					<li><a href="#" target="_blank"><img
 							src="images/img04.jpg" width="88" height="30" alt="" /></a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
-	<p class="cl footer_text">公司版权</p>
+	<p class="cl footer_text">Copyright @2011-2014  帛儒瑞亚 版权所有 津ICP备XXXXX号XXXX </p>
 	<!--底部 开始-->
 	<script>
 	function requestAppendSelect(url, targetId){
@@ -562,7 +501,7 @@
 				var div0_dd = $("<dd/>");
 				div0_dl.append(div0_dd);
 				$.each(v.widgets, function(k, v){
-					div0_dd.append($("<a href=\"#\" target=\"_blank\">"+ v.widget.name +"</a><em>|</em>"));
+					div0_dd.append($("<a href=\"<%=request.getContextPath()%>/jaxrs/brand/" + k + "\" target=\"_blank\">"+ v.widget.name +"</a><em>|</em>"));
 				});
 					
 				
@@ -579,7 +518,7 @@
 					
 					var div1_ul = $("<ul/>");
 					$.each(v.widgets, function(k, v){
-						var li = $("<li><a href=\"#\" target=\"_blank\"> <img alt=\""+v.widget.name+"\" src="+v.widget.img+" height=\"55\" width=\"55\" >"+v.widget.name+"</img></a></li>");
+						var li = $("<li><a href=\"<%=request.getContextPath()%>/jaxrs/brand/" + k + " target=\"_blank\"> <img alt=\""+v.widget.name+"\" src="+v.widget.img+" height=\"55\" width=\"55\" >"+v.widget.name+"</img></a></li>");
 						div1_ul.append(li)
 					})
 					div_img.append(div1_ul)
