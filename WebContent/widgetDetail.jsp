@@ -6,7 +6,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>配件详情</title>
-	<link rel="stylesheet" type="text/css" href="css/accessory-detail.css" />
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/accessory-detail.css" />
+	
 </head>
 <body>
 <!--导航 开始-->
@@ -21,36 +22,35 @@
 	AutoWidget widget = (AutoWidget)request.getAttribute("autoWidget");
 	AutoType type = (AutoType)request.getAttribute("autoType");
 	AutoBrand brand = (AutoBrand)request.getAttribute("autoBrand");
-	AutoWidgetType widgetType =(AutoWidgetType) request.getAttribute("widgetType");
+	AutoWidgetType widgetType =(AutoWidgetType) request.getAttribute("autoWidgetType");
 	%>
 
 	<div class="path"><span class="mr10">您的位置：</span><a href="#" target="_blank">首页</a><em>》</em><a href="#" target="_blank">配件大全</a><em>》</em><a href="#" target="_blank">配件大全品牌</a><em>》</em><span>配件大全车型</span></div>
-	<h1 class="a_detail_title">一汽大众奥迪200方向盘电话接听开关</h1>
+	<h1 class="a_detail_title"><%= widget.getName() %></h1>
     <div class="fl a_detail_box">
     	<table width="500" border="0" align="center" cellpadding="0" cellspacing="5">
           <tr>
           	<td width="110" align="center" valign="top">
-            <img src="images/gotop.gif" width="100" height="14" id="gotop" />
+            <img src="<%=request.getContextPath() %>/images/gotop.gif" width="100" height="14" id="gotop" />
             <div id="showArea">
-                <img src="images/img06.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="images/img06.jpg" link="http://www.lanrentuku.com" />
-                <img src="images/img07.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="images/img07.jpg" link="http://www.lanrentuku.com" />
-                <img src="images/img08.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="images/img08.jpg" link="http://www.lanrentuku.com" />
-                <img src="images/img06.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="images/img06.jpg" link="http://www.lanrentuku.com" />
-                <img src="images/img07.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="images/img07.jpg" link="http://www.lanrentuku.com" />
-                <img src="images/img07.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="images/img08.jpg" link="http://www.lanrentuku.com" />
-                <img src="images/img06.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="images/img06.jpg" link="http://www.lanrentuku.com" />
-                <img src="images/img07.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="images/img07.jpg" link="http://www.lanrentuku.com" />
-                <img src="images/img08.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="images/img08.jpg" link="http://www.lanrentuku.com" />
-                <img src="images/img06.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="images/img06.jpg" link="http://www.lanrentuku.com" />
-                <img src="images/img07.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="images/img07.jpg" link="http://www.lanrentuku.com" />
-                <img src="images/img08.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="images/img08.jpg" link="http://www.lanrentuku.com" />
+                <img src="<%=request.getContextPath() %>/images/img06.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="<%=request.getContextPath() %>/images/img06.jpg" link="http://www.lanrentuku.com" />
+                <img src="<%=request.getContextPath() %>/images/img07.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="<%=request.getContextPath() %>/images/img07.jpg" link="http://www.lanrentuku.com" />
+                <img src="<%=request.getContextPath() %>/images/img08.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="<%=request.getContextPath() %>/images/img08.jpg" link="http://www.lanrentuku.com" />
+                <img src="<%=request.getContextPath() %>/images/img06.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="<%=request.getContextPath() %>/images/img06.jpg" link="http://www.lanrentuku.com" />
+                <img src="<%=request.getContextPath() %>/images/img07.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="<%=request.getContextPath() %>/images/img07.jpg" link="http://www.lanrentuku.com" />
+                <img src="<%=request.getContextPath() %>/images/img07.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="<%=request.getContextPath() %>/images/img08.jpg" link="http://www.lanrentuku.com" />
+                <img src="<%=request.getContextPath() %>/images/img06.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="<%=request.getContextPath() %>/images/img06.jpg" link="http://www.lanrentuku.com" />
+                <img src="<%=request.getContextPath() %>/images/img07.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="<%=request.getContextPath() %>/images/img07.jpg" link="http://www.lanrentuku.com" />
+                <img src="<%=request.getContextPath() %>/images/img08.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="<%=request.getContextPath() %>/images/img08.jpg" link="http://www.lanrentuku.com" />
+                <img src="<%=request.getContextPath() %>/images/img06.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="<%=request.getContextPath() %>/images/img06.jpg" link="http://www.lanrentuku.com" />
+                <img src="<%=request.getContextPath() %>/images/img07.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="<%=request.getContextPath() %>/images/img07.jpg" link="http://www.lanrentuku.com" />
+                <img src="<%=request.getContextPath() %>/images/img08.jpg" alt="" width="80" height="50" border="0" class="thumb_img" rel="<%=request.getContextPath() %>/images/img08.jpg" link="http://www.lanrentuku.com" />
             </div>
-            <img src="images/gobottom.gif" width="100" height="14" id="gobottom" /></td>
-            <td class="max_img" width="420" align="center"><img src="images/img08.jpg" alt="" width="420" height="400" border="0" id="main_img" rel="images/img08.jpg" link="http://www.lanrentuku.com" /></td>
+            <img src="<%=request.getContextPath() %>/images/gobottom.gif" width="100" height="14" id="gobottom" /></td>
+            <td class="max_img" width="420" align="center"><img src="<%=request.getContextPath() %>/images/img08.jpg" alt="" width="420" height="400" border="0" id="main_img" rel="images/img08.jpg" link="http://www.lanrentuku.com" /></td>
           </tr>
 </table>
     </div>
-    <script type="text/javascript" src="js/detail_img.js"></script>
     <div class="fr detail_box_rgt">
     	<h2><%= widget.getName() %></h2>
         <dl>
@@ -59,7 +59,7 @@
         </dl>
         <dl>
         	<dt>配件所属品牌：</dt>
-            <dd><%=  brand.getName() %></dd>
+            <dd><%= brand.getName() %></dd>
         </dl>
         <dl>
         	<dt>适用车型：</dt>
@@ -72,11 +72,10 @@
         <dl>
         	<dt>配件名称：</dt>
             <dd><%= widget.getName() %></dd>
-            
         </dl>
         <dl>
         	<dt>经销商：</dt>
-            <dd>---</dd>
+            <dd><%= widget.getUserId() %></dd>
         </dl>
         <dl>
         	<dt>当前库存：</dt>
@@ -90,8 +89,9 @@
         	<dd><a class="deatil_gwc" href="#">加入购物车</a><a class="deatil_gm" href="#" target="_blank">立即购买</a></dd>
         </dl>
     </div>
-    
-<script type=text/javascript>
+
+<script type="text/javascript" src="<%=request.getContextPath() %>/js/detail_img.js"></script>
+<script type="text/javascript">
 function selectTag(showContent,selfObj){
 	// 操作标签
 	var tag = document.getElementById("tags").getElementsByTagName("li");
@@ -144,6 +144,8 @@ function selectTag(showContent,selfObj){
     </div>
     </div>
 </div>
-
+<!-- 底部开始 -->
+<%@ include file="/WEB-INF/footer.jsp"%>
+<!-- 底部结束 -->
 </body>
 </html>
