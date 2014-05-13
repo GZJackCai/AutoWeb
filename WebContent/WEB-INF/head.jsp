@@ -7,6 +7,9 @@
 <%@page import="com.care.mybatis.bean.AutoBrand"%>
 <%@page import="com.care.mybatis.bean.AutoWidget"%>
 <%@page import="com.care.mybatis.bean.AutoWidgetType"%>
+<%@page import="com.care.wink.ShoppingAction"%>
+<%@page import="com.care.domain.ShoppingCartItem"%>
+<%@page import="com.care.domain.ShoppingCart"%>
 
 <script>
 var g_contextPath = "<%=request.getContextPath() %>";

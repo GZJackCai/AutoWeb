@@ -165,12 +165,12 @@ public class UIServiceImpl implements UIService {
 	}
 
 	@Override
-	public AutoWidget getWidgetByKey(int widgetId) {
+	public AutoWidget getAutoWidgetByKey(int widgetId) {
 		return autoWidgetMapper.selectByPrimaryKey(widgetId);
 	}
 
 	@Override
-	public AutoWidgetType getWidgetTypeByKey(Integer type) {
+	public AutoWidgetType getAutoWidgetTypeByKey(Integer type) {
 		return 	autoWidgetTypeMapper.selectByPrimaryKey(type);
 	}
 

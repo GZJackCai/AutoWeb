@@ -34,7 +34,7 @@ public class WidgetAction extends BaseAction {
 	public void detail(@PathParam("widgetId") int widgetId) throws ServletException, IOException{
 		//查詢所有的配件信息
 		UIService uiService = getCtx().getBean(UIService.class);
-		AutoWidget autoWidget = uiService.getWidgetByKey(widgetId);
+		AutoWidget autoWidget = uiService.getAutoWidgetByKey(widgetId);
 		AutoType autoType =	 uiService.getAutoTypeById(autoWidget.getAutoType());
 		AutoBrand autoBrand = uiService.getAutoBrandById(autoType.getBrandId());
 		AutoWidgetType autoWidgetType = uiService.getAutoWidgetType(autoWidget.getType());

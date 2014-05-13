@@ -83,10 +83,13 @@
         </dl>
         <dl>
         	<dt>购买数量：</dt>
-            <dd><input type="text" value="1" />件</dd>
+            <dd><input id="quantity" type="text" value="1" />件</dd>
         </dl>
         <dl>
-        	<dd><a class="deatil_gwc" href="#">加入购物车</a><a class="deatil_gm" href="#" target="_blank">立即购买</a></dd>
+        	<dd>
+        		<a class="deatil_gwc" onclick="addToCart()">加入购物车</a>
+        		<a class="deatil_gm" target="_blank">立即购买</a>
+        	</dd>
         </dl>
     </div>
 
@@ -96,18 +99,26 @@ function selectTag(showContent,selfObj){
 	// 操作标签
 	var tag = document.getElementById("tags").getElementsByTagName("li");
 	var taglength = tag.length;
-	for(i=0; i<taglength; i++){
+	for(var i=0; i<taglength; i++){
 		tag[i].className = "";
 	}
 	selfObj.parentNode.className = "nchover";
 	// 操作内容
-	for(i=0; j=document.getElementById("tagContent"+i); i++){
+	for(var i=0; j=document.getElementById("tagContent"+i); i++){
 		j.style.display = "none";
 	}
 	document.getElementById(showContent).style.display = "block";
-	
-	
 }
+	function addToCart(){
+		//获取数量
+		var quantity = jQuery("#quantity").attr("value");
+		var widgetId = <%= widget.getId()%>;
+		
+		var url = g_contextPath + "/jaxrs/shopping/add/"+widgetId+"-"+quantity;
+		jQuery.getJSON(url, function(data){
+			console.log("addToCart", data);
+		});
+	}
 </script> 
     <div class="cl " id="con">
     	<ul class="deatil_tab" id="tags">

@@ -8,7 +8,15 @@ public class ShoppingCart {
 	private User user;
 	private LinkedList<ShoppingCartItem> items = new LinkedList<ShoppingCartItem>();
 
-	
+	public void addItem(ShoppingCartItem e){
+		for(ShoppingCartItem item : items){
+			if(item.getId() == e.getId()){
+				item.incrCount();
+				return;
+			}
+		}
+		items.add(e);
+	}
 	
 	public ShoppingCart(User user ) {
 		super();
@@ -41,7 +49,7 @@ public class ShoppingCart {
 		return t;
 	}
 	
-	public float getTotalCount(){
+	public int getTotalCount(){
 		return items.size();
 	}
 	

@@ -32,9 +32,9 @@ public interface UIService {
 
 	List<UIWidgetType> allAutoWidgets();
 
-	AutoWidget getWidgetByKey(int widgetId);
+	AutoWidget getAutoWidgetByKey(int widgetId);
 
-	AutoWidgetType getWidgetTypeByKey(Integer type);
+	AutoWidgetType getAutoWidgetTypeByKey(Integer type);
 
 	AutoType getAutoTypeById(Integer autoType);
 

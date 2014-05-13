@@ -38,6 +38,10 @@ public class ShoppingCartItem {
 	public void setCount(int count) {
 		this.count = count;
 	}
+	public void incrCount() {
+		this.count += 1;
+		
+	}
 	
 	
 }
