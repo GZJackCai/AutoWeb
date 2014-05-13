@@ -34,7 +34,6 @@
     <table class="shopping_list">
     	<% 
     		ShoppingCart cart = (ShoppingCart)session.getAttribute(ShoppingAction.SHOPPING_KEY);
-    		
     		for(ShoppingCartItem item : cart.getItems()){
     			%>
     				<tr>

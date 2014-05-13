@@ -36,9 +36,7 @@ public class ShoppingAction extends BaseAction {
 	@Produces(MediaType.APPLICATION_JSON)
 	public String add(@PathParam("widgetId") int widgetId, @PathParam("quantity") int quantity) throws ServletException, IOException{
 		int code = 0;
-		
 		RetValue retValue = getRetValue("add");
-		
 		try {
 			UIService uiService = getCtx().getBean(UIService.class);
 			AutoWidget widget = uiService.getAutoWidgetByKey(widgetId);
@@ -64,23 +62,25 @@ public class ShoppingAction extends BaseAction {
 	@GET
 	@Path("del/{widgetId}")
 	public void del(@PathParam("widgetId") int widgetId) throws ServletException, IOException{
-		
+		initCart(request.getSession());
 	}
 	
 	@GET
 	@Path("viewCart")
 	public void viewCart() throws ServletException, IOException{
+		initCart(request.getSession());
 		request.getRequestDispatcher("/shopCart.jsp").forward(request, response);
 	}
 	
 	@GET
 	@Path("remove")
 	public void remove(@PathParam("widgetId") int widgetId) throws ServletException, IOException{
-		
+		initCart(request.getSession());
 	}
 	
 	@POST
 	@Path("commit")
 	public void commit(@FormParam("widgetId") int widgetId) throws ServletException, IOException{
+		initCart(request.getSession());
 	}
 }
