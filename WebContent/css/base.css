@@ -109,3 +109,10 @@ background:url(../images/jiantou.png) no-repeat scroll 100px 0 #ffffff;margin:0 
 .path a{ color:#666666;}
 .path span{ color:#666;}
 .path em{ padding:0 5px; color:#999; font-size:8px;}
+/*分页*/
+.ui_page { float:right; margin:15px 0 30px 0;}
+.ui_page li{ float:left; border:1px solid #e5e5e5; padding:10px 15px;border-style: solid solid solid none; color:#208fe2;}
+.ui_page li a{color:#208fe2;}
+.ui_page li:hover{ background:#efefef; text-decoration:underline;}
+.ui_page li.page_on{ border-left:1px solid #e5e5e5; text-decoration:none;}
+.ui_page li.page_select{ background:#efefef; color:#999999;text-decoration:none;}

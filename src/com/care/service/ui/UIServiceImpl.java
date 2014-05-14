@@ -13,6 +13,8 @@ import com.care.domain.UIWidgetType;
 import com.care.mybatis.bean.AutoBrand;
 import com.care.mybatis.bean.AutoType;
 import com.care.mybatis.bean.AutoTypeExample;
+import com.care.mybatis.bean.AutoVolume;
+import com.care.mybatis.bean.AutoVolumeExample;
 import com.care.mybatis.bean.AutoWidget;
 import com.care.mybatis.bean.AutoWidgetExample;
 import com.care.mybatis.bean.AutoWidgetType;
@@ -22,6 +24,7 @@ import com.care.mybatis.bean.AutoYear;
 import com.care.mybatis.bean.AutoYearExample;
 import com.care.mybatis.dao.AutoBrandMapper;
 import com.care.mybatis.dao.AutoTypeMapper;
+import com.care.mybatis.dao.AutoVolumeMapper;
 import com.care.mybatis.dao.AutoWidgetMapper;
 import com.care.mybatis.dao.AutoWidgetTypeMapper;
 import com.care.mybatis.dao.AutoYearMapper;
@@ -43,6 +46,9 @@ public class UIServiceImpl implements UIService {
 	
 	@Resource
 	private AutoYearMapper autoYearMapper;
+	
+	@Resource
+	private AutoVolumeMapper autoVolumeMapper;
 	
 	@Override
 	public SearchItem getSearchItem() {
@@ -84,12 +90,11 @@ public class UIServiceImpl implements UIService {
 	}
 
 	@Override
-	public List<AutoWidgetType> getAutoWidgetTypes(int autoYearId) {
-		AutoWidgetTypeExample query = new AutoWidgetTypeExample();
-		if (autoYearId > 0){
-			query.createCriteria().andYearIdEqualTo(autoYearId);			
-		}
-		List<AutoWidgetType> list = autoWidgetTypeMapper.selectByExample(query);
+	public List<AutoWidgetType> getAutoWidgetTypes(int typeId, int brandId,
+			int volumeId, int yearId) {
+		AutoWidgetTypeExample example = new AutoWidgetTypeExample();
+		example.createCriteria().andAutoyearREqualTo(yearId).andAutobrandREqualTo(brandId).andAutovolumeREqualTo(volumeId).andAutotypeREqualTo(typeId);
+		List<AutoWidgetType> list = autoWidgetTypeMapper.selectByExample(example );
 		return list;
 	}
 
@@ -183,4 +188,13 @@ public class UIServiceImpl implements UIService {
 	public AutoWidgetType getAutoWidgetType(Integer type) {
 		return autoWidgetTypeMapper.selectByPrimaryKey(type);
 	}
+
+	@Override
+	public List<AutoVolume> getAutoVolumes(int typeId) {
+		AutoVolumeExample example = new AutoVolumeExample();
+		example.createCriteria().andTypeIdEqualTo(typeId);
+		return autoVolumeMapper.selectByExample(example );
+	}
+
+
 }

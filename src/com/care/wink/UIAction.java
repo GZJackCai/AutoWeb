@@ -60,14 +60,14 @@ public class UIAction extends BaseAction {
 		
 	}
 	
-	@GET
-	@Path("autoWidgetTypes/{autoYear}")
-	public String autoWidgetTypes(@PathParam("autoYear") int autoYearId){
-		UIService uiService = getCtx().getBean(UIService.class);
-		List<AutoWidgetType> autoWidgetTypes = uiService.getAutoWidgetTypes(autoYearId);
-		return JSONUtil.toJson(autoWidgetTypes);
-		
-	}
+//	@GET
+//	@Path("autoWidgetTypes/{autoYear}")
+//	public String autoWidgetTypes(@PathParam("autoYear") int autoYearId){
+//		UIService uiService = getCtx().getBean(UIService.class);
+//		List<AutoWidgetType> autoWidgetTypes = uiService.getAutoWidgetTypes(autoYearId);
+//		return JSONUtil.toJson(autoWidgetTypes);
+//		
+//	}
 	
 	@GET
 	@Path("autoWidgets/{widgetType}")

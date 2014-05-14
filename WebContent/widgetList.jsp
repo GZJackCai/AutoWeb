@@ -27,29 +27,29 @@
     </div>
     <table class="fitting_box">
     	<%
-    		List<UIWidgetType> widgetList = (List<UIWidgetType>)request.getAttribute("widgetList");
-    		for(UIWidgetType type : widgetList){
-    			%>
-    				<tr>
-    					<td class="bg_b"><%= type.getType() %></td>
-            		<td>
-            	<ul class="fitting_nei">
-            	<%
-            	for(UIWidget widgetUI : type.getWidgets()){
-            		%>	
-            			<!-- 選擇配件名稱 -->
-            			<a href="<%=request.getContextPath()%>/jaxrs/brand/<%=widgetUI.getWidget().getId()%>" target="_blank">
-            				<%= widgetUI.getWidget().getName() %>
-            			</a>
-            			<em>|</em>
-            		<%
-            	}
-            	%>
-                </ul>
-            </td>
-    		</tr>
-    			<%
-    		}
+   		List<UIWidgetType> widgetList = (List<UIWidgetType>)request.getAttribute("uiWidgetTypes");
+   		for(UIWidgetType type : widgetList){
+   			%>
+  				<tr>
+  					<td class="bg_b"><%= type.getType() %></td>
+          			<td>
+           			<ul class="fitting_nei">
+		            	<%
+		            	for(UIWidget widgetUI : type.getWidgets()){
+		            		%>	
+		            			<!-- 選擇配件名稱 -->
+		            			<a href="<%=request.getContextPath()%>/jaxrs/widget/detail/<%=widgetUI.getWidget().getId()%>" target="_blank">
+		            				<%= widgetUI.getWidget().getName() %>
+		            			</a>
+		            			<em>|</em>
+		            		<%
+		            	}
+		            	%>
+                	</ul>
+           		</td>
+   			</tr>
+   			<%
+   		}
     	%>
     </table>
 </div><!-- 底部开始 -->

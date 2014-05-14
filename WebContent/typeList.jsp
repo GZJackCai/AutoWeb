@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/head.jsp"%>
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -21,7 +20,8 @@
 	<div class="path"><span class="mr10">您的位置：</span><a href="#" target="_blank">首页</a><em>》</em><a href="#" target="_blank">配件大全</a><em>》</em><a href="#" target="_blank">配件大全品牌</a><em>》</em><span>配件大全车型</span></div>
     <div class="fitting_bz3"></div>
 	<div class="fitting_models">
-    	<h1><%=((AutoBrand)request.getAttribute("autoBrand")).getName() %>车型</h1>
+		<%	AutoBrand brand = (AutoBrand)request.getAttribute("autoBrand"); %>
+    	<h1><%=(brand).getName() %>车型</h1>
         <p>提：示请选择汽车品牌</p>
     </div>
     <ul class="fitting_models_box fl">
@@ -29,7 +29,7 @@
     	List<AutoType> autoTypes = (List<AutoType>)request.getAttribute("autoTypes");
     	for(AutoType type : autoTypes){
     		%>
-    			<li><a href="<%=request.getContextPath()%>/jaxrs/widget/detail/<%= request.getAttribute("widgetId") %>" target="_blank"><%= type.getName() %> &gt;&gt; </a></li>	
+    			<li><a href="<%=request.getContextPath()%>/jaxrs/auto/volume/<%= type.getId() %>-<%= brand.getId() %>" target="_blank"><%= type.getName() %> &gt;&gt; </a></li>	
     		<%
     	}
     	%>

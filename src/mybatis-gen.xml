@@ -68,13 +68,19 @@
 		<table tableName="auto_widget_type" domainObjectName="AutoWidgetType"></table>
 		<table tableName="auto_maintenance_appoint" domainObjectName="AutoMaintenanceAppoint"></table>
 		<table tableName="auto_year" domainObjectName="AutoYear"></table>
-		
+		<table tableName="auto_volume" domainObjectName="AutoVolume"></table>
+	
+	
 		<!-- common -->
 		<table tableName="city" domainObjectName="City"></table>
 		<table tableName="country" domainObjectName="Country"></table>
 		<table tableName="order" domainObjectName="Order"></table>
 		<table tableName="order_item" domainObjectName="OrderItem"></table>
 		
-		
+		<!-- raletion -->
+		<table tableName="widgettype_autobrand_r" domainObjectName="widgettype_autobrand_r"></table>
+		<table tableName="widgettype_autotype_r" domainObjectName="widgettype_autotype_r"></table>
+		<table tableName="widgettype_autovolume_r" domainObjectName="widgettype_autovolume_r"></table>
+		<table tableName="widgettype_autoyear_r" domainObjectName="widgettype_autoyear_r"></table>
 	</context>
 </generatorConfiguration>

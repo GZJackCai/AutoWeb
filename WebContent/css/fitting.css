@@ -1,10 +1,11 @@
 @charset "utf-8";
 /* CSS Document */
-.fitting_bz1,.fitting_bz2,.fitting_bz3,.fitting_bz4{ background:url(../images/fitting_bz.png) no-repeat; margin:10px 0;width:990px; height:27px;}
-.fitting_bz1{ background-position:0 -90px;}
-.fitting_bz2{ background-position:0 -60px;}
-.fitting_bz3{ background-position:0 -31px;}
-.fitting_bz4{ background-position:0 0; }
+.fitting_bz1,.fitting_bz2,.fitting_bz3,.fitting_bz4,.fitting_bz5{ background:url(../images/fitting_bz.png) no-repeat; margin:10px 0;width:990px; height:27px;}
+.fitting_bz1{ background-position:0 -2px;}
+.fitting_bz2{ background-position:0 -122px;}
+.fitting_bz3{ background-position:0 -92px;}
+.fitting_bz4{ background-position:0 -32px; }
+.fitting_bz5{ background-position:0 -62px; }
 /*二级*/
 .fitting_title{ border-top:2px solid #4273d1; height:30px; border-left:1px solid #4273d1; border-right:1px solid #94bed4; margin-top:20px;}
 .fitting_title h1{ background:url(../images/fitting_title.jpg) no-repeat; width:155pa; height:30px; color:#ffffff; line-height:30px; padding-left:10px; font-weight:bold;}
