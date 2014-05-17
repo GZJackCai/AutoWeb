@@ -16,7 +16,8 @@
 			<value>com.mysql.jdbc.Driver</value>
 		</property>
 		<property name="driverUrl">
-			<value>jdbc:mysql://autoweb0.mysql.rds.aliyuncs.com/auto?useUnicode=true&amp;characterEncoding=utf8&amp;autoreconnect=true&amp;connectTimeout=300000&amp;socketTimeout=300000</value>
+			<value>jdbc:mysql://autoweb0.mysql.rds.aliyuncs.com/auto?useUnicode=true&amp;characterEncoding=utf8&amp;autoreconnect=true&amp;connectTimeout=300000&amp;socketTimeout=300000
+			</value>
 		</property>
 		<property name="user" value="auto" />
 		<property name="password" value="auto_web" />
@@ -46,12 +47,12 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="auto_ds" />
 	</bean>
-	
+
 	<bean id="UICorpDescMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="com.care.mybatis.dao.UICorpDescMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
-	
+
 	<bean id="AutoMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="com.care.mybatis.dao.AutoMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
@@ -72,19 +73,36 @@
 		<property name="mapperInterface" value="com.care.mybatis.dao.AutoWidgetTypeMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
-	
+
 	<bean id="AutoVolumeMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="com.care.mybatis.dao.AutoVolumeMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
-	
+
+	<bean id="AutoVendor" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.care.mybatis.dao.AutoVendorMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+
 	<bean id="AutoYearMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="com.care.mybatis.dao.AutoYearMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
+	
+	<!-- AutoWidgetAbsMapper -->
+	<bean id="AutoWidgetAbsMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.care.mybatis.dao.AutoWidgetAbsMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	
 
 	<bean id="UserMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="com.care.mybatis.dao.UserMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+
+	<bean id="UserAddressMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.care.mybatis.dao.UserAddressMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 
@@ -94,6 +112,21 @@
 	</bean>
 	<bean id="UserRoleMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="com.care.mybatis.dao.UserRoleMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+
+
+	<bean id="OrderMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.care.mybatis.dao.OrderMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	
+	<bean id="OrderNoSeqs" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.care.mybatis.dao.OrderNoSeqsMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	<bean id="OrderItemMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.care.mybatis.dao.OrderItemMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 </beans>

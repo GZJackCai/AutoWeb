@@ -16,16 +16,16 @@ import com.care.service.ui.UIService;
 public class TypeAction extends BaseAction {
 	
 	@GET
-	@Path("{brandId}-{widgetId}")
-	public void listType(@PathParam("brandId") int brandId, @PathParam("widgetId") int widgetId) throws ServletException, IOException{
+	@Path("{brandId}-{widgetAbsId}")
+	public void listType(@PathParam("brandId") int brandId, @PathParam("widgetAbsId") int widgetAbsId) throws ServletException, IOException{
 		
 		UIService uiService = getCtx().getBean(UIService.class);
 		List<AutoType> autoTypes = uiService.getAutoTypes(brandId);
 		AutoBrand autoBrand = uiService.getAutoBrandById(brandId);
 		request.setAttribute("autoBrand", autoBrand);
 		request.setAttribute("autoTypes", autoTypes);
-		//request.setAttribute("brandId", brandId);
-		request.setAttribute("widgetId", widgetId);
+		request.setAttribute("brandId", brandId);
+		request.setAttribute("widgetAbsId", widgetAbsId);
 		//查詢所有的配件信息
 		request.getRequestDispatcher("/typeList.jsp").forward(request, response);
 	}

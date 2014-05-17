@@ -8,6 +8,7 @@ import com.care.mybatis.bean.AutoBrand;
 import com.care.mybatis.bean.AutoType;
 import com.care.mybatis.bean.AutoVolume;
 import com.care.mybatis.bean.AutoWidget;
+import com.care.mybatis.bean.AutoWidgetAbs;
 import com.care.mybatis.bean.AutoWidgetType;
 import com.care.mybatis.bean.AutoYear;
 
@@ -26,7 +27,8 @@ public interface UIService {
 	List<AutoWidgetType> getAutoWidgetTypes(int typeId, int brandId, int volumeId, int yearId);
 
 	List<AutoWidget> getAutoWidgets(int widgetTypeId);
-
+	
+	List<AutoWidgetAbs> getAutoWidgetAbss(int widgetTypeId);
 
 	List<UIWidgetType> listAutoWidgetTypes( int sStatus, Boolean hot,
 			boolean face);

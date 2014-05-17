@@ -8,9 +8,9 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/fitting.css" />
     <script type="text/javascript" src="<%=request.getContextPath() %>/js/a.js"></script>
 	<div class="logobox box">
-		<a class="fl logo" href="#"></a>
+		<a class="fl logo" href="<%=request.getContextPath() %>"></a>
 		<div class="fr logobox_fr">
-			<a class="gwc_icon" href="#" target="_blank">购物车</a> <em>|</em> <a
+			<a class="gwc_icon" href="<%=request.getContextPath() %>/jaxrs/shopping/viewCart" target="_blank">购物车</a> <em>|</em> <a
 				href="#" target="_blank">帮助</a>
 		</div>
 	</div>

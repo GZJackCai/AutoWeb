@@ -4,5 +4,7 @@ com.care.wink.WidgetAction
 com.care.wink.BrandAction
 com.care.wink.TypeAction
 com.care.wink.WidgetAction
+com.care.wink.WidgetAbsAction
 com.care.wink.ShoppingAction
 com.care.wink.AutoAction
+com.care.wink.OrderAction

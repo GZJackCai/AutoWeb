@@ -22,10 +22,10 @@ public class UserAction extends BaseAction {
 
 	private Logger log = LoggerFactory.getLogger(UserAction.class);
 	private UserService userService = getCtx().getBean(UserServiceImpl.class);
-	private UserOpenIDService openIDService = getCtx().getBean(UserOpenIdServiceImpl.class);
+	//private UserOpenIDService openIDService = getCtx().getBean(UserOpenIdServiceImpl.class);
 	private RoleService roleService = getCtx().getBean(RoleServiceImpl.class);
-
-
+	public static final String SESSION_USER = "session_user";
+	
 	@POST
 	@Path("logout")
 	public String logout(@FormParam("email") String email, @FormParam("password") String password) {

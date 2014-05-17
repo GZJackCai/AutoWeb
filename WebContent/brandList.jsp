@@ -33,7 +33,7 @@
     			<%
     				for(AutoBrand  brand : e.getValue()){
     					%>
-							<a href="<%=request.getContextPath()%>/jaxrs/type/<%= brand.getId() %>-<%= request.getAttribute("widgetId") %>" target="_blank"><%= brand.getName()%></a><em>|</em>
+							<a href="<%=request.getContextPath()%>/jaxrs/type/<%= brand.getId() %>-<%= request.getAttribute("widgetAbsId") %>"  ><%= brand.getName()%></a><em>|</em>
     					<%
     				}
     			%>

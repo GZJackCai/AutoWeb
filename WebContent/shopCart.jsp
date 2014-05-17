@@ -36,7 +36,7 @@
     		ShoppingCart cart = (ShoppingCart)session.getAttribute(ShoppingAction.SHOPPING_KEY);
     		for(ShoppingCartItem item : cart.getItems()){
     			%>
-    				<tr>
+    				<tr id="<%= item.getId() %>">
 			        	<td class="std_01"><input type="checkbox" /></td>
 			            <td class="std_02"><a href="#" target="_blank">
 			            <%= item.getName() %>
@@ -50,7 +50,7 @@
 			                    <li><a href="#">+</a></li>
 			                </ul>
 			            </td>
-			            <td class="std_06"><a href="#">删除</a></td>
+			            <td class="std_06"><a onclick="javascript:del(<%= item.getId() %>)" >删除</a></td>
 			        </tr>
     			<%
     		}
@@ -64,11 +64,22 @@
     </div>
     <div class="shbox_btn">
     	<a class="jxgw_btn fl" href="#" target="_blank">继续购物</a>
-        <a class="settlement_btn fr" href="#" target="_blank">去结算</a>
+        <a class="settlement_btn fr" href="<%=request.getContextPath()%>/jaxrs/shopping/commit" target="_blank">去结算</a>
     </div>
 </div>
 <!-- 底部开始 -->
 <%@ include file="/WEB-INF/footer.jsp"%>
 <!-- 底部结束 -->
+
+<script>
+	function del(id){
+		console.log("del", id);
+		var url = g_contextPath+"/jaxrs/shopping/delItem/"+id;
+		$.getJSON(url, function(data){
+			console.log("del retval:", data);
+			location.reload();
+		});
+	}
+</script>
 </body>
 </html>

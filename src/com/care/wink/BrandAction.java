@@ -20,8 +20,8 @@ import com.care.service.ui.UIService;
 public class BrandAction extends BaseAction {
 	
 	@GET
-	@Path("{widgetId}")
-	public void listBrand(@PathParam("widgetId") int widgetId) throws ServletException, IOException{
+	@Path("{widgetAbsId}")
+	public void listBrand(@PathParam("widgetAbsId") int widgetAbsId) throws ServletException, IOException{
 		//查詢所有的配件信息
 		Map<String, List<AutoBrand>> widgetListMap = new HashMap<String, List<AutoBrand>>();
 
@@ -38,7 +38,8 @@ public class BrandAction extends BaseAction {
 				list.add(b);
 			}
 		}
-		request.setAttribute("widgetId", widgetId);
+		request.getSession().setAttribute("widgetAbsId", widgetAbsId);
+		request.setAttribute("widgetAbsId", widgetAbsId);
 		request.setAttribute("widgetListMap", widgetListMap);
 		request.getRequestDispatcher("/brandList.jsp").forward(request, response);
 	}

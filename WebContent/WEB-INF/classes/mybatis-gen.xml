@@ -5,8 +5,8 @@
 <generatorConfiguration>
 	<context id="mysqlTables" targetRuntime="MyBatis3">
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://autoweb0.mysql.rds.aliyuncs.com/auto" userId="auto"
-			password="auto_web" />
+			connectionURL="jdbc:mysql://autoweb0.mysql.rds.aliyuncs.com/auto"
+			userId="auto" password="auto_web" />
 
 		<!-- 指定生成的类型为java类型，避免数据库中number等类型字段 -->
 		<javaTypeResolver>
@@ -32,21 +32,21 @@
 		</javaClientGenerator>
 
 		<!-- ui -->
-		<table tableName="ui_corp_desc" domainObjectName="UICorpDesc" >
+		<table tableName="ui_corp_desc" domainObjectName="UICorpDesc">
 			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
-			<columnOverride column="intro" jdbcType="VARCHAR"/>
-			<columnOverride column="big_events" jdbcType="VARCHAR"/>
-			<columnOverride column="leader_says" jdbcType="VARCHAR"/>
+			<columnOverride column="intro" jdbcType="VARCHAR" />
+			<columnOverride column="big_events" jdbcType="VARCHAR" />
+			<columnOverride column="leader_says" jdbcType="VARCHAR" />
 		</table>
-		<table tableName="ui_adver" domainObjectName="UIAdver"/>
+		<table tableName="ui_adver" domainObjectName="UIAdver" />
 		<table tableName="ui_knowledge" domainObjectName="UIKnowledge"></table>
 		<table tableName="ui_link" domainObjectName="UILink"></table>
 		<table tableName="ui_news" domainObjectName="UINews"></table>
 		<table tableName="ui_quick_sales" domainObjectName="UIQuickSales"></table>
 		<table tableName="ui_video" domainObjectName="UIVideo"></table>
 		<table tableName="ui_web_desc" domainObjectName="UIWebDesc"></table>
-		
-		
+
+
 		<!-- user -->
 		<table tableName="user" domainObjectName="User"></table>
 		<table tableName="user_role" domainObjectName="UserRole"></table>
@@ -55,8 +55,9 @@
 		<table tableName="user_operate" domainObjectName="UserOperate"></table>
 		<table tableName="user_operate_group" domainObjectName="UserOperateGroup"></table>
 		<table tableName="user_status" domainObjectName="UserStatus"></table>
-		
-		
+		<table tableName="user_address" domainObjectName="UserAddress"></table>
+
+
 		<!-- auto -->
 		<table tableName="auto" domainObjectName="Auto"></table>
 		<table tableName="auto_brand" domainObjectName="AutoBrand"></table>
@@ -65,18 +66,24 @@
 		<table tableName="auto_quantity" domainObjectName="AutoQuantity"></table>
 		<table tableName="auto_type" domainObjectName="AutoType"></table>
 		<table tableName="auto_widget" domainObjectName="AutoWidget"></table>
+		<table tableName="auto_widget_abs" domainObjectName="AutoWidgetAbs"></table>
 		<table tableName="auto_widget_type" domainObjectName="AutoWidgetType"></table>
 		<table tableName="auto_maintenance_appoint" domainObjectName="AutoMaintenanceAppoint"></table>
 		<table tableName="auto_year" domainObjectName="AutoYear"></table>
 		<table tableName="auto_volume" domainObjectName="AutoVolume"></table>
-	
-	
+		<table tableName="auto_vendor" domainObjectName="AutoVendor"></table>
+
+		
 		<!-- common -->
 		<table tableName="city" domainObjectName="City"></table>
 		<table tableName="country" domainObjectName="Country"></table>
-		<table tableName="order" domainObjectName="Order"></table>
+		<table tableName="order" domainObjectName="Order">
+			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
+		</table>
 		<table tableName="order_item" domainObjectName="OrderItem"></table>
-		
+		<table tableName="order_no_seqs" domainObjectName="OrderNoSeqs">
+			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
+		</table>
 		<!-- raletion -->
 		<table tableName="widgettype_autobrand_r" domainObjectName="widgettype_autobrand_r"></table>
 		<table tableName="widgettype_autotype_r" domainObjectName="widgettype_autotype_r"></table>

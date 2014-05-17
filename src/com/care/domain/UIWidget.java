@@ -1,24 +1,21 @@
 package com.care.domain;
 
-import com.care.mybatis.bean.AutoWidget;
+import com.care.mybatis.bean.AutoWidgetAbs;
 
 public class UIWidget {
-	private AutoWidget widget;
+	private AutoWidgetAbs widgetAbs;
 
-	public UIWidget(AutoWidget widget) {
+	public AutoWidgetAbs getWidgetAbs() {
+		return widgetAbs;
+	}
+
+	public void setWidgetAbs(AutoWidgetAbs widgetAbs) {
+		this.widgetAbs = widgetAbs;
+	}
+
+	public UIWidget(AutoWidgetAbs widgetAbs) {
 		super();
-		this.widget = widget;
+		this.widgetAbs = widgetAbs;
 	}
 
-	public AutoWidget getWidget() {
-		return widget;
-	}
-
-	public void setWidget(AutoWidget widget) {
-		this.widget = widget;
-	}
- 
-	
-	
-	
 }

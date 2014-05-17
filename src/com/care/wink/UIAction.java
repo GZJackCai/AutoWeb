@@ -16,7 +16,6 @@ import com.care.domain.UIWidgetType;
 import com.care.mybatis.bean.AutoBrand;
 import com.care.mybatis.bean.AutoType;
 import com.care.mybatis.bean.AutoWidget;
-import com.care.mybatis.bean.AutoWidgetType;
 import com.care.mybatis.bean.AutoYear;
 import com.care.mybatis.bean.UICorpDesc;
 import com.care.mybatis.dao.UICorpDescMapper;

@@ -38,8 +38,8 @@
 		            	for(UIWidget widgetUI : type.getWidgets()){
 		            		%>	
 		            			<!-- 選擇配件名稱 -->
-		            			<a href="<%=request.getContextPath()%>/jaxrs/widget/detail/<%=widgetUI.getWidget().getId()%>" target="_blank">
-		            				<%= widgetUI.getWidget().getName() %>
+		            			<a href="<%=request.getContextPath()%>/jaxrs/widget/detail/<%=widgetUI.getWidgetAbs().getId()%>"  >
+		            				<%= widgetUI.getWidgetAbs().getName() %>
 		            			</a>
 		            			<em>|</em>
 		            		<%

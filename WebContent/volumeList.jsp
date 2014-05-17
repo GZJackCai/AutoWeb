@@ -33,7 +33,7 @@
 	
     for(AutoVolume v : volumes){
     	%>
-    	<li><a href="<%=request.getContextPath() %>/jaxrs/widget/listType/<%= brand.getId() %>-<%= autoType.getId() %>-<%= v.getId() %>-<%= v.getYearId() %>" target="_blank"> <%= v.getYearId() %> | <%= v.getName() %> | <%= v.getDescr() %></a></li>
+    	<li><a href="<%=request.getContextPath() %>/jaxrs/widgetAbs/listType/<%= brand.getId() %>-<%= autoType.getId() %>-<%= v.getId() %>-<%= v.getYearId() %>" > <%= v.getYearId() %> | <%= v.getName() %> | <%= v.getDescr() %></a></li>
     	<%
     }
     %>

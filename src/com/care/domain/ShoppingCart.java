@@ -1,5 +1,6 @@
 package com.care.domain;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 import com.care.mybatis.bean.User;
@@ -51,6 +52,15 @@ public class ShoppingCart {
 	
 	public int getTotalCount(){
 		return items.size();
+	}
+
+	public void remove(int itemId) {
+		for(Iterator<ShoppingCartItem> ite = items.iterator(); ;ite.hasNext()){
+			if(ite.next().getId() == itemId){
+				items.remove();
+				return;
+			}
+		}
 	}
 	
 }

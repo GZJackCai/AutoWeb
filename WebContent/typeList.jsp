@@ -29,7 +29,7 @@
     	List<AutoType> autoTypes = (List<AutoType>)request.getAttribute("autoTypes");
     	for(AutoType type : autoTypes){
     		%>
-    			<li><a href="<%=request.getContextPath()%>/jaxrs/auto/volume/<%= type.getId() %>-<%= brand.getId() %>" target="_blank"><%= type.getName() %> &gt;&gt; </a></li>	
+    			<li><a href="<%=request.getContextPath()%>/jaxrs/auto/volume/<%= type.getId() %>-<%= brand.getId() %>"  ><%= type.getName() %> &gt;&gt; </a></li>	
     		<%
     	}
     	%>
