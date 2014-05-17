@@ -29,8 +29,7 @@
     </div>
     <ul class="fitting_models_box fl">
     <%
-    List<AutoVolume> volumes = ( List<AutoVolume> )request.getAttribute("autoVolumes");
-	
+    List<AutoVolume> volumes = (List<AutoVolume> )request.getAttribute("autoVolumes");
     for(AutoVolume v : volumes){
     	%>
     	<li><a href="<%=request.getContextPath() %>/jaxrs/widgetAbs/listType/<%= brand.getId() %>-<%= autoType.getId() %>-<%= v.getId() %>-<%= v.getYearId() %>" > <%= v.getYearId() %> | <%= v.getName() %> | <%= v.getDescr() %></a></li>

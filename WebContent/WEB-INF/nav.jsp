@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="com.care.mybatis.bean.User"%>
+<%@page import="com.care.domain.UserOrder"%>
+<%@page import="com.care.wink.UserAction"%>
+
 <script type="text/javascript" src="<%= request.getContextPath()%>/js/jquery.min.js"></script>
 <script type="text/javascript" src="<%= request.getContextPath()%>/js/comm-util.js"></script>
 <script type="text/javascript" src="<%= request.getContextPath()%>/js/util.js"></script>
@@ -10,8 +14,12 @@
 	<div class="logobox box">
 		<a class="fl logo" href="<%=request.getContextPath() %>"></a>
 		<div class="fr logobox_fr">
-			<a class="gwc_icon" href="<%=request.getContextPath() %>/jaxrs/shopping/viewCart" target="_blank">购物车</a> <em>|</em> <a
-				href="#" target="_blank">帮助</a>
+		<%
+		User user = (User)session.getAttribute(UserAction.SESSION_USER);
+		%>
+			<span><%= user != null ? user.getName(): "" %></span>
+			<a class="gwc_icon" href="<%=request.getContextPath() %>/jaxrs/shopping/viewCart" target="_blank">购物车</a> 
+			<em>|</em> <a href="#" target="_blank">帮助</a>
 		</div>
 	</div>
 <div class="cl nav box">

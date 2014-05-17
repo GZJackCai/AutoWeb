@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.QueryParam;
 
 import com.care.domain.UIWidget;
 import com.care.domain.UIWidgetType;
@@ -32,11 +33,14 @@ public class WidgetAbsAction extends BaseAction {
 			@PathParam("typeId") int typeId, 
 			@PathParam("brandId") int brandId, 
 			@PathParam("volumeId") int volumeId, 
-			@PathParam("yearId") int yearId) throws ServletException, IOException{
+			@PathParam("yearId") int yearId , @QueryParam("widgetAbsId")Integer _widgetAbsId) throws ServletException, IOException{
 		
 		//配件已经选择,直接跳到详细列表.
-		Integer widgetAbsId = (Integer) request.getSession().getAttribute("widgetAbsId");
-		if(widgetAbsId != null){
+		Integer widgetAbsId = (Integer) request.getSession().getAttribute("widgetAbsId" );
+		if(widgetAbsId == null){
+			widgetAbsId = _widgetAbsId;
+		}
+		if(widgetAbsId != null  ){
 			
 			AutoWidgetAbsMapper autoWidgetAbsMapper = getCtx().getBean(AutoWidgetAbsMapper.class);
 			AutoWidgetAbs widgetAbs = autoWidgetAbsMapper.selectByPrimaryKey(widgetAbsId);
@@ -58,6 +62,8 @@ public class WidgetAbsAction extends BaseAction {
 			request.setAttribute("vendorMap", vendorMap);
 			request.setAttribute("widgets", widgets);
 			request.setAttribute("widgetAbs", widgetAbs);
+
+			request.getSession().removeAttribute("widgetAbsId");
 			request.getRequestDispatcher("/widgetVendorList.jsp").forward(request, response);
 			return;
 		}
@@ -78,6 +84,10 @@ public class WidgetAbsAction extends BaseAction {
 			uiWidgetTypes.add(e );
 		}
 		
+		request.setAttribute("typeId", typeId);
+		request.setAttribute("brandId", brandId);
+		request.setAttribute("volumeId", volumeId);
+		request.setAttribute("yearId", yearId);
 	
 		request.setAttribute("uiWidgetTypes", uiWidgetTypes);
 		request.getRequestDispatcher("/widgetList.jsp").forward(request, response);
@@ -89,8 +99,8 @@ public class WidgetAbsAction extends BaseAction {
 	public void list() throws ServletException, IOException{
 		//查詢所有的配件信息
 		UIService uiService = getCtx().getBean(UIService.class);
-		List<UIWidgetType> widgetList = uiService.allAutoWidgets();
-		request.setAttribute("widgetList", widgetList);
+		List<UIWidgetType> uiWidgetTypes = uiService.allAutoWidgets();
+		request.setAttribute("uiWidgetTypes", uiWidgetTypes);
 		request.getRequestDispatcher("/widgetList.jsp").forward(request,response);
 	}
 	

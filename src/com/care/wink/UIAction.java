@@ -56,7 +56,6 @@ public class UIAction extends BaseAction {
 		UIService uiService = getCtx().getBean(UIService.class);
 		List<AutoYear> autoYears =	uiService.getAutoYears(autoTypeId);
 		return JSONUtil.toJson(autoYears);
-		
 	}
 	
 //	@GET

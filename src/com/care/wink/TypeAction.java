@@ -17,7 +17,7 @@ public class TypeAction extends BaseAction {
 	
 	@GET
 	@Path("{brandId}-{widgetAbsId}")
-	public void listType(@PathParam("brandId") int brandId, @PathParam("widgetAbsId") int widgetAbsId) throws ServletException, IOException{
+	public void listType(@PathParam("brandId") int brandId, @PathParam("widgetAbsId") Integer widgetAbsId) throws ServletException, IOException{
 		
 		UIService uiService = getCtx().getBean(UIService.class);
 		List<AutoType> autoTypes = uiService.getAutoTypes(brandId);
@@ -25,7 +25,9 @@ public class TypeAction extends BaseAction {
 		request.setAttribute("autoBrand", autoBrand);
 		request.setAttribute("autoTypes", autoTypes);
 		request.setAttribute("brandId", brandId);
-		request.setAttribute("widgetAbsId", widgetAbsId);
+		if(widgetAbsId != null){
+			request.setAttribute("widgetAbsId", widgetAbsId);			
+		}
 		//查詢所有的配件信息
 		request.getRequestDispatcher("/typeList.jsp").forward(request, response);
 	}

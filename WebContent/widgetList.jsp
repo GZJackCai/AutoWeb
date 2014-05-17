@@ -37,8 +37,8 @@
 		            	<%
 		            	for(UIWidget widgetUI : type.getWidgets()){
 		            		%>	
-		            			<!-- 選擇配件名稱 -->
-		            			<a href="<%=request.getContextPath()%>/jaxrs/widget/detail/<%=widgetUI.getWidgetAbs().getId()%>"  >
+		            			<!-- 選擇配件名稱 widgetAbs/listType/{brandId}-{typeId}-{volumeId}-{yearId}-->
+		            			<a href="<%=request.getContextPath()%>/jaxrs/widgetAbs/listType/<%=request.getAttribute("brandId") %>-<%= request.getAttribute("typeId") %>-<%= request.getAttribute("volumeId") %>-<%= request.getAttribute("yearId") %>?widgetAbsId=<%= widgetUI.getWidgetAbs().getId()%>"  >
 		            				<%= widgetUI.getWidgetAbs().getName() %>
 		            			</a>
 		            			<em>|</em>

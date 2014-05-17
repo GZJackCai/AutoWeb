@@ -147,7 +147,7 @@
 			<h1 class="title_index">产品列表</h1>
 			<div class="classbox" id="widgetList0">
 			</div>
-			<a class="news_more" href="jaxrs/widgetAbs/list" target="_blank">更多...</a>
+			<a class="news_more" href="jaxrs/brand/list" target="_blank">更多...</a>
 		</div>
 		<!-- 配件分类 结束-->
 		<div class="fittingclass fr" id="pushWidgetList">
@@ -186,41 +186,7 @@
 		<!--汽车品牌 开始-->
 		<div class="car fl">
 			<h1 class="car_titile">品牌列表</h1>
-			<div class="car_list">
-				<dl>
-					<dt>A-F</dt>
-					<dd>
-						<a href="#" target="_blank">奥迪</a> <a href="#" target="_blank">奥迪</a>
-						<a href="#" target="_blank">奥迪</a> <a href="#" target="_blank">奥迪</a>
-						<a href="#" target="_blank">奥迪</a> <a href="#" target="_blank">奥迪</a>
-					</dd>
-				</dl>
-				<dl>
-					<dt>A-F</dt>
-					<dd>
-						<a href="#" target="_blank">奥迪</a> <a href="#" target="_blank">奥迪</a>
-						<a href="#" target="_blank">奥迪</a> <a href="#" target="_blank">奥迪</a>
-						<a href="#" target="_blank">奥迪</a> <a href="#" target="_blank">奥迪</a>
-					</dd>
-				</dl>
-				<dl>
-					<dt>A-F</dt>
-					<dd>
-						<a href="#" target="_blank">奥迪</a> <a href="#" target="_blank">奥迪</a>
-						<a href="#" target="_blank">奥迪</a> <a href="#" target="_blank">奥迪</a>
-						<a href="#" target="_blank">奥迪</a> <a href="#" target="_blank">奥迪</a>
-						<a href="#" target="_blank">奥迪</a> <a href="#" target="_blank">奥迪</a>
-					</dd>
-				</dl>
-				<dl>
-					<dt>A-F</dt>
-					<dd>
-						<a href="#" target="_blank">奥迪</a> <a href="#" target="_blank">奥迪</a>
-						<a href="#" target="_blank">奥迪</a> <a href="#" target="_blank">奥迪</a>
-						<a href="#" target="_blank">奥迪</a> <a href="#" target="_blank">奥迪</a>
-						<a href="#" target="_blank">奥迪</a> <a href="#" target="_blank">奥迪</a>
-					</dd>
-				</dl>
+			<div class="car_list" id="car_list">
 			</div>
 		</div>
 		<!--汽车品牌 结束-->
@@ -271,9 +237,7 @@
 				$.each(v.widgets, function(k, v){
 					div0_dd.append($("<a href=\"<%=request.getContextPath()%>/jaxrs/brand/"+ v.widgetAbs.id +"\" target=\"_blank\">"+ v.widgetAbs.name +"</a><em>|</em>"));
 				});
-					
-				
-			})
+			});
 			
 			//pushWidgetList
 			var div1 = $("#pushWidgetList");
@@ -291,7 +255,25 @@
 					})
 					div_img.append(div1_ul)
 					div1.append(div_img);
-			})
+			});
+		});
+			//jaxrs/brand/listAll
+		$.getJSON(g_contextPath+"/jaxrs/brand/listAll", function(resp){
+			var car_list_div = $("#car_list");
+			
+			$.each(resp, function(k, v){
+				console.log(k, v);
+				var div_dl = $("<dl/>");
+			 	//dl.dt
+				div_dl.append("<dt>"+ k +"</dt>");
+			 	//dl.dd
+				var dd = $("<dd/>");
+				for(var i = 0; i < v.length; i++){
+					dd.append($("<a href=\""+g_contextPath+"/jaxrs/type/" + v[i].id + "--1\"> "+v[i].name+" </a>"));
+				}
+				div_dl.append(dd);
+				div_dl.appendTo(car_list_div);
+			});
 		});
 	});
 	

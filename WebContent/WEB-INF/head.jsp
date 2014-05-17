@@ -14,7 +14,6 @@
 <%@page import="com.care.mybatis.bean.AutoWidgetAbs"%>
 <%@page import="com.care.mybatis.bean.AutoVendor"%>
 
-<%@page import="com.care.domain.UserOrder"%>
 <%@page import="com.care.wink.ShoppingAction"%>
 <%@page import="com.care.domain.ShoppingCartItem"%>
 <%@page import="com.care.domain.ShoppingCart"%>

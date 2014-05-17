@@ -113,11 +113,10 @@ public class ShoppingAction extends BaseAction {
 			return;
 
 		// 获取用户信息
-		User user = (User) request.getAttribute(UserAction.SESSION_USER);
+		User user = (User) request.getSession().getAttribute(UserAction.SESSION_USER);
 		if (user == null) {
-			user = new User();
-			user.setName("gaojie");
-			user.setId(1);
+			//跳转到登录页
+			response.sendRedirect(request.getContextPath());
 		}
 
 		UserAddressMapper addressMapper = getCtx().getBean(

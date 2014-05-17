@@ -56,6 +56,7 @@ public class UserAction extends BaseAction {
 			if(u != null){
 				rv.setCode(1);
 				rv.setMsg(u.getNick());
+				request.getSession().setAttribute(UserAction.SESSION_USER, u);
 			}else{
 				rv.setCode(-1);
 				rv.setMsg("fail");
