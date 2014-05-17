@@ -1,7 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/head.jsp"%>
+<%
+	String path = request.getContextPath();
 
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -75,14 +81,14 @@
 		<!--焦点图 end-->
 		<div class="list01_rgt fr">
 			<!--登录-->
-			<div class="login">
+			<div id="loginDiv" class="login">
 				<span class="phone"></span>
 				<ul class="login_box">
-					<li><label>用户名</label> <input class="text login_text"
+					<li><label>用户名</label> <input id="email" class="text login_text"
 						type="text" value="" /></li>
-					<li><label>用户名</label> <input class="text login_text"
+					<li><label>密码</label> <input id="password" class="text login_text"
 						type="text" value="" /></li>
-					<li><input class="login_btn" type="button" value="登录" /><input
+					<li><input class="login_btn" type="button" value="登录" onclick="userLogin()"/><input
 						class="login_btn" type="button" value="免费注册" /></li>
 				</ul>
 				<div class="list_rgt_img">
@@ -248,6 +254,7 @@
 <%@ include file="/WEB-INF/footer.jsp"%>
 <!-- 底部结束 -->
 	<script>
+	var basePath = "<%=basePath%>";
 	$(function(){
 		// 加载产品列表
 		var widgetListURL = "jaxrs/ui/autoWidgetList";
@@ -287,6 +294,34 @@
 			})
 		});
 	});
+	
+	function userLogin(){
+		var url = basePath + "jaxrs/user/login";
+		var email = $("#email").val();
+		var password = $("#password").val();
+		if(email == ""){
+			alert("用户名不能为空");
+
+		}else if(password == ""){
+			alert("密码不能为空");
+		}
+		var cxl = Math.random();
+		var para = {
+				email : email,password : password,cxl :cxl
+		}
+		$.post(url,para,loginCallBack);
+	}
+
+	function loginCallBack(data){
+		console.log(data);
+		var code = data.code;
+		var msg = data.msg;
+		if(code == "1"||code == 1){
+			$("#loginDiv").html("<div style='text-align:center;'>欢迎您 , " + msg +"</div>");
+		}else{
+			alert("登录失败");
+		}
+	}
 </script>
 </body>
 </html>

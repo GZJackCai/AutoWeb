@@ -4,6 +4,8 @@ import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +38,28 @@ public class UserAction extends BaseAction {
 			deleteFromSession(Constant.SESSION_USER);
 			rv.setCode(1);
 			rv.setMsg("success");
+		} catch (Exception e) {
+			rv.setCode(-1);
+			rv.setMsg(e.getMessage());
+		}
+		return getRetValueJson(rv);
+	}
+	
+	@POST
+	@Path("login")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String login(@FormParam("email") String email, @FormParam("password") String password) {
+		RetValue rv = getRetValue("login");
+		try {
+			log.info("{}:email:{} password:{}", rv.getAction(), email, password);
+			User u = userService.login(email, password);
+			if(u != null){
+				rv.setCode(1);
+				rv.setMsg(u.getNick());
+			}else{
+				rv.setCode(-1);
+				rv.setMsg("fail");
+			}
 		} catch (Exception e) {
 			rv.setCode(-1);
 			rv.setMsg(e.getMessage());
