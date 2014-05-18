@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>故障分析</title>
+<link type="text/css" rel="stylesheet" href="css/base.css" />
+<link type="text/css" rel="stylesheet" href="css/reservation.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="box">
+	<div class="path"><span class="mr10">您的位置：</span><a href="#" target="_blank">首页</a><em>》</em><span>故障分析</span></div>
+    <h1 class="rtion_title">故障信息</h1>
+    <div class="yuyue_xx">
+     		<!--故障类别 start-->
+            <div class="years g_faultclass" style="display:none">
+            	<ul>
+                	<li>发动机</li>
+                    <li>发动机</li>
+                    <li>发动机</li>
+                    <li>发动机</li>
+                </ul>
+            </div>
+            <!--故障类别 end-->
+    		
+    	<dl>
+        	<dt>故障类别：</dt>
+            <dd><input class="text yuyue_in" id = "searchAutoBrand" onclick="loadBrandIndex()" type="text" value="" /></dd>
+        </dl>
+        <dl>
+        	<dt>故障描述：</dt>
+            <dd><input class="text w695"  id = "searchAutoType" onclick="loadTypeIndex()" type="text" value="" /></dd>
+        </dl>
+        </div>
+        <div class="cl yuyue_xx">
+        <!--选择品牌 start-->
+			<div class="mdsch g_mdsch_01">
+				<div class="mdsch_box" id="mdsch_box" style="display:none" >
+					<ul class="mdsch_cnt">
+						<a class="mdsch_zm" href="javascript:void(0)">A</a>
+						<a href="javascript:void(0)">宝马</a>
+						<a href="javascript:void(0)">阿斯顿马丁</a>
+						<a href="javascript:void(0)">奥迪</a>
+					</ul>
+					<ul class="mdsch_cnt even">
+						<a class="mdsch_zm" href="javascript:void(0)">B</a>
+						<a href="javascript:void(0)">巴博斯</a>
+						<a href="javascript:void(0)">保时捷</a>
+						<a href="javascript:void(0)">北京汽车</a>
+						<a href="javascript:void(0)">北汽威旺</a>
+						<a href="javascript:void(0)">北汽制造</a>
+						<a href="javascript:void(0)">奔驰</a>
+						<a href="javascript:void(0)">奔腾</a>
+						<a href="javascript:void(0)">本田</a>
+						<a href="javascript:void(0)">布加迪</a>
+						<a href="javascript:void(0)">比亚迪</a>
+						<a href="javascript:void(0)">标致</a>
+						<a href="javascript:void(0)">别克</a>
+					</ul>
+					<ul class="mdsch_cnt">
+						<a class="mdsch_zm" href="javascript:void(0)">C</a>
+						<a href="javascript:void(0)">昌河</a>
+						<a href="javascript:void(0)">长安</a>
+						<a href="javascript:void(0)">长安商用</a>
+						<a href="javascript:void(0)">长城</a>
+						<a href="javascript:void(0)">长丰</a>
+						<a href="javascript:void(0)">川汽野马</a>
+					</ul>
+					<ul class="mdsch_cnt even">
+						<a class="mdsch_zm" href="javascript:void(0)">D</a>
+						<a href="javascript:void(0)">昌河</a>
+						<a href="javascript:void(0)">长安</a>
+						<a href="javascript:void(0)">长安商用</a>
+						<a href="javascript:void(0)">长城</a>
+						<a href="javascript:void(0)">长丰</a>
+						<a href="javascript:void(0)">川汽野马</a>
+					</ul>
+					<ul class="mdsch_cnt">
+						<a class="mdsch_zm" href="javascript:void(0)">F</a>
+						<a href="javascript:void(0)">昌河</a>
+						<a href="javascript:void(0)">长安</a>
+						<a href="javascript:void(0)">长安商用</a>
+						<a href="javascript:void(0)">长城</a>
+						<a href="javascript:void(0)">长丰</a>
+						<a href="javascript:void(0)">川汽野马</a>
+					</ul>
+					<ul class="mdsch_cnt even">
+						<a class="mdsch_zm" href="javascript:void(0)">G</a>
+						<a href="javascript:void(0)">昌河</a>
+						<a href="javascript:void(0)">长安</a>
+						<a href="javascript:void(0)">长安商用</a>
+						<a href="javascript:void(0)">长城</a>
+						<a href="javascript:void(0)">长丰</a>
+						<a href="javascript:void(0)">川汽野马</a>
+					</ul>
+					<ul class="mdsch_cnt">
+						<a class="mdsch_zm" href="javascript:void(0)">F</a>
+						<a href="javascript:void(0)">昌河</a>
+						<a href="javascript:void(0)">长安</a>
+						<a href="javascript:void(0)">长安商用</a>
+						<a href="javascript:void(0)">长城</a>
+						<a href="javascript:void(0)">长丰</a>
+						<a href="javascript:void(0)">川汽野马</a>
+					</ul>
+					<ul class="mdsch_cnt">
+						<a class="mdsch_zm" href="javascript:void(0)">F</a>
+						<a href="javascript:void(0)">昌河</a>
+						<a href="javascript:void(0)">长安</a>
+						<a href="javascript:void(0)">长安商用</a>
+						<a href="javascript:void(0)">长城</a>
+						<a href="javascript:void(0)">长丰</a>
+						<a href="javascript:void(0)">川汽野马</a>
+					</ul>
+					<ul class="mdsch_cnt even">
+						<a class="mdsch_zm" href="javascript:void(0)">G</a>
+						<a href="javascript:void(0)">昌河</a>
+						<a href="javascript:void(0)">长安</a>
+						<a href="javascript:void(0)">长安商用</a>
+						<a href="javascript:void(0)">长城</a>
+						<a href="javascript:void(0)">长丰</a>
+						<a href="javascript:void(0)">川汽野马</a>
+					</ul>
+				</div>
+			</div>
+			<!--选择品牌 end-->
+			<!--选择车系 start-->
+			<div class="mdsch g_mdsch_02">
+				<div class="mdsch_box02" style="display:none;" id="mdsch_box02">
+					<ul class="mdsch_cnt">
+						<a class="mdsch_tit" href="javascript:void(0)">一汽奥迪</a>
+						<a href="javascript:void(0)">昌河</a>
+						<a href="javascript:void(0)">长安</a>
+						<a href="javascript:void(0)">长安商用</a>
+						<a href="javascript:void(0)">长城</a>
+						<a href="javascript:void(0)">长丰</a>
+						<a href="javascript:void(0)">川汽野马</a>
+					</ul>
+					<ul class="mdsch_cnt even">
+						<a class="mdsch_tit" href="javascript:void(0)">一汽奥迪</a>
+						<a href="javascript:void(0)">昌河</a>
+						<a href="javascript:void(0)">长安</a>
+						<a href="javascript:void(0)">长安商用</a>
+						<a href="javascript:void(0)">长城</a>
+						<a href="javascript:void(0)">长丰</a>
+						<a href="javascript:void(0)">川汽野马</a>
+					</ul>
+				</div>
+			</div>
+			<!--选择车系 end-->
+            
+        <dl>
+        	<dt>汽车品牌：</dt>
+            <dd><input class="text yuyue_in" type="text" value="" /></dd>
+        </dl>
+        <dl>
+        	<dt>汽车型号：</dt>
+            <dd><input class="text yuyue_in" type="text" value="" /></dd>
+        </dl>
+        </div>
+        <div class="cl yuyue_xx">
+        <!--年份 start-->
+            <div class="years g_years" style="">
+            	<ul>
+                	<li>2012款</li>
+                    <li>2012款</li>
+                    <li>2012款</li>
+                    <li>2012款</li>
+                </ul>
+            </div>
+            <!--年份 end-->
+        <dl>
+        	<dt>汽车年份：</dt>
+            <dd><input class="text yuyue_in" type="text" value="" /></dd>
+        </dl>
+        <dl>
+        	<dt>排量：</dt>
+            <dd><input class="text yuyue_txt" type="text" value="" /></dd>
+        </dl>
+  		</div>
+        <div class="cl ss_btn_box"><a class="yuyue_btn" href="#">搜索</a></div>
+        
+  <h1 class="cl rtion_title">搜索结果<span>（4条信息）</span></h1>
+  <div class="gzfx_jieguo">
+  	    <dl>
+        	<dt><strong>1.</strong>汽车性能异常</dt>
+            <dd>汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常</dd>
+        </dl>
+        <dl>
+        	<dt><strong>1.</strong>汽车性能异常</dt>
+            <dd>汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常</dd>
+        </dl>
+        <dl>
+        	<dt><strong>1.</strong>汽车性能异常</dt>
+            <dd>
+            	<ul>
+                	<li><a href="#" target="_blank"><img src="images/img03.jpg" width="170" height="125" alt="" /></a></li>
+                    <li><a href="#" target="_blank"><img src="images/img03.jpg" width="170" height="125" alt="" /></a></li>
+                    <li><a href="#" target="_blank"><img src="images/img03.jpg" width="170" height="125" alt="" /></a></li>
+                    <li><a href="#" target="_blank"><img src="images/img03.jpg" width="170" height="125" alt="" /></a></li>
+                    <li><a href="#" target="_blank"><img src="images/img03.jpg" width="170" height="125" alt="" /></a></li>
+                    <li><a href="#" target="_blank"><img src="images/img03.jpg" width="170" height="125" alt="" /></a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl class="none">
+        	<dt><strong>1.</strong>汽车性能异常</dt>
+            <dd>汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常汽车性能异常</dd>
+        </dl>
+  </div>
+</div>
+</body>
+</html>

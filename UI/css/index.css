@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* CSS Document */
+
+.service_text{background:url(../images/text.png) no-repeat;}
+.car_titile,.video_title,.fittingclass_bg01,.fittingclass_bg02{ background:url(../images/home_bg.png) no-repeat;}
+
+.list01_lf{ margin-top:2px;}
+.list01_lf li{ margin-top:7px;}
+.kp_list01_lf{ width:515px; height:260px; margin:10px 0 0 10px;}
+#focus {width:515px; height:260px; overflow:hidden; position:relative;}
+#focus ul {height:260px; position:absolute;}
+#focus ul li {float:left; width:515px; height:260px; overflow:hidden; position:relative; background:#000;}
+#focus ul li div {position:absolute; overflow:hidden;}
+#focus .btnBg {position:absolute; width:515px; height:20px; left:0; bottom:0; background:#000;}
+#focus .btn {position:absolute; width:515px; height:10px; padding:5px 10px; right:0; bottom:0; text-align:right;}
+#focus .btn span {display:inline-block; _display:inline; _zoom:1; width:25px; height:10px; _font-size:0; margin-left:5px; cursor:pointer; background:#fff;}
+#focus .btn span.on {background:#fff;}
+#focus .preNext {width:45px; height:100px; position:absolute; top:90px; background:url("http://mat.001car.com/main/v1/images/header/kp_focus_sprite.png") no-repeat 0 0; cursor:pointer;}
+#focus .pre {left:0;}
+#focus .next {right:0; background-position:right top;}
+.list01_rgt{ width:230px; margin-top:10px;}
+.login{ height:170px; width:230px; background:#f9ab46;-moz-border-radius:15px; -webkit-border-radius:15px;border-radius:15px; position:relative;}
+.phone{ background:url(../images/phone.jpg) no-repeat; width:218px; height:59px; position:absolute; top:6px; left:6px;}
+.login_text{ width:150px; -webkit-border-radius:15px;border-radius:15px; position:relative; margin-left:10px;}
+.login_box{ padding-top:70px; padding-bottom:6px;}
+.login_box li{ margin-bottom:10px;}
+.login_box label{ float:right; color:#ffffff; margin-right:15px; line-height:20px; font-weight:bold;}
+.login_btn{ background:#ff893b; line-height:20px; height:20px; text-align:center; color:#ffffff; border:none; width:70px;-moz-border-radius:15px; -webkit-border-radius:15px;border-radius:15px; margin:0 0 0 10px; cursor:pointer;}
+.login_btn:hover{ background:#e48304; color:#ffffff;}
+.list_rgt_img{ margin-top:10px;}
+
+.newsbox{ width:323px; background:#f9ab46; height:210px; padding-top:10px; margin-bottom:10px;}
+.news{ background:#ffffff; width:303px; height:200px; margin:0 10px 10px 10px;-moz-border-radius:15px; -webkit-border-radius:15px;border-radius:15px; }
+.news_title{ background:url(../images/title_home.png) no-repeat; width:300px; height:28px; line-height:28px; padding-left:20px; font-weight:bold;}
+.news_list{ margin:10px; height:110px; overflow:hidden;}
+.news_list li{ background:url(../images/dian.gif) no-repeat scroll 0 10px rgba(0, 0, 0, 0); height:22px; line-height:22px; padding-left:10px; }
+.news_more{ float:right; color:#999999; margin:0 20px 20px 0; line-height:15px;}
+.news_txt{ margin:10px; height:110px; overflow:hidden;}
+.news_txt p{text-indent:25px; color:#666666; line-height:20px;}
+
+.fittingclass{ width:484px; border:3px solid #9ac2d7; height:420px; background:#ffffff; -moz-border-radius:15px; -webkit-border-radius:15px;border-radius:15px; position:relative;}
+.fittingclass_bg01{ background-position:0 -68px; width:58px; height:52px; position:absolute; top:-3px; right:-9px;}
+.fittingclass_bg02{ background-position:-58px -68px; width:58px; height:52px; position:absolute; top:376px; right:-8px;}
+.title_index{ height:30px; background:#4c7ddc; line-height:30px; padding-left:10px; color:#ffffff; -moz-border-radius:12px 12px 0 0; -webkit-border-radius:12px 12px 0 0;border-radius:12px 12px 0 0; font-weight:bold;}
+.classbox{ margin:20px; height:310px; overflow:hidden;}
+.classbox dl{ border-bottom:1px dashed #cccccc; margin-bottom:10px;}
+.classbox dl dt{ background:url(../images/sanjiao.jpg) no-repeat scroll 0 4px; height:15px; padding-left:15px; font-size:14px; font-weight:bold; margin-bottom:5px;}
+.classbox dl dd{ padding-bottom:8px;}
+.classbox dl dd a{ padding:0 5px; line-height:22px; height:22px;margin-top:7px; display:inline-block;}
+.classbox dl dd em{ padding:0 5px; color:#cccccc; }
+.cp_hd{ padding:2px 10px;-moz-border-radius:15px; -webkit-border-radius:15px;border-radius:15px; background:#4e7e64; color:#ffffff; width:60px; text-align:center;}
+.class_img ul li{ float:left; margin:10px 10px 0 0; width:57px; height:57px; border:1px solid #999999; padding:5px;-moz-border-radius:7px; -webkit-border-radius:7px;border-radius:7px;}
+.class_more{ float:right; color:#999999; margin-top:62px;}
+.class_img{ margin:20px; height:100px;}
+
+.servicesearch{ background:#5484e5; height:295px; width:325px; margin-top:10px;}
+.service_box{ padding:15px;}
+.service_box dt{ padding-bottom:5px;}
+.service_text{ background-position:0 0;width:214px; height:24px; border:0; padding:0 10px; line-height:24px; }
+.service_btn{ background:#f9ab46; line-height:24px; height:24px; width:56px; text-align:center; color:#ffffff; display:block;-moz-border-radius:15px; -webkit-border-radius:15px;border-radius:15px;}
+.service_btn:hover{ color:#ffffff; background:#e48304;}
+.service_list{ padding:15px;}
+.service_list h2{ font-weight:bold; font-size:14px; margin-top:10px;}
+.service_list ul{ margin:5px 0 0 10px; height:182px; overflow:hidden;}
+.service_list ul li{ background:url("../images/dian.gif") no-repeat scroll 0 10px rgba(0, 0, 0, 0); height:22px; line-height:22px; padding-left:10px; overflow:hidden; width:290px;}
+.service_list ul li a:hover{ color:#ffffff;}
+
+.car{ width:285px; height:295px; background:#b4dff5; margin-top:10px; margin-bottom:10px;}
+.car_titile{ background-position:0 0; width:250px; height:33px; margin:10px; color:#ffffff; line-height:33px; padding-left:10px; font-weight:bold;}
+.car_list{ height:235px; overflow:hidden; overflow-y:auto; color:#000;}
+.car_list dl{ padding:0 0 0 10px;}
+.car_list dl dt{ width:250px; border-bottom:1px dashed #333333; line-height:22px; font-weight:bold;}
+.car_list dl dd{ width:250px; }
+.car_list dl dd a{ line-height:22px; margin:5px 15px 0 0;}
+.video{ width:380px; height:295px; background:#ffba61; margin-top:10px;}
+.video_title{ width:357px; height:33px; background-position:0 -35px; line-height:33px; padding-left:10px; font-weight:bold; color:#ffffff; margin:10px 0 0 12px;}
+.video_list{ margin:10px 0 0 1px; }
+.video_list li{ float:left; margin:10px 0 0 12px;}
+

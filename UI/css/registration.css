@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+
+.registration{ width:990px; border:1px solid #e5e5e5; margin:0 auto; margin-top:20px; height:530px;}
+.registration_rgt{ width:230px; border-left:1px solid #e5e5e5; height:400px; font-size:16px;text-align:center;}
+.registration_rgt p{ margin-top:130px;}
+.registration_rgt a{ color:#208fe2; }
+.registration_fl{ padding:25px 0 0 170px;}
+.registration_fl h1{font-size:28px; padding-left:105px;}
+.denglu{ padding:10px 0 20px 106px;}
+.denglu a{ color:#208FE2; padding-left:5px;}
+.registrationbox li{ font-size:14px; margin:15px 0 0 0; position:relative;}
+.registrationbox li label{font-size:14px; width:90px; letter-spacing:2px; display:inline-block; text-align:right; padding-right:15px;}
+.registrationbox li label b{ color:#ff0000;}
+.registrationbox li.xieyi{ padding-left:105px; font-size:12px; padding-top:15px;}
+.registrationbox li.xieyi a{ color:#208fe2;}
+.registrationbox li.reg_btn{ margin-left:80px;}
+.yanzhenma{ width:120px; height:37px; background:#fb8301; text-align:center; line-height:35px; border:1px solid #fb8301; color:#ffffff; font-size:14px; cursor:pointer;}
+.registrationbox li.phone label{ float:left; line-height:35px;}
+.registrationbox li.phone input.bm_text{ width:150px; margin-right:10px; float:left;}
+.registrationbox li input.bm_text{ width:280px;}
+.registrationbox li.phone .yanzhenma_img{ float:left; width:120px; height:35px;}
+
+.beizhu{  position:absolute; right:170px; top:0; width:250px; height:35px; line-height:14px;display:table; }
+.beizhu p{ padding:3px;font-size:12px; font-family:Tahoma, Geneva, sans-serif; color:#999999;vertical-align:middle;display:table-cell; }
+.bm_text {font-size: 14px; height: 35px;line-height: 35px;width: 290px;}
+
+.registration_btn {
+    background:#bc0000;
+    border: 0 none;
+    color: #FFFFFF;
+    font-size: 18px;
+    height: 45px;
+    line-height: 45px;
+    margin: 15px 0 0 25px;
+    text-align: center;
+    width: 286px;
+	font-family: "Microsoft Yahei","Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB",STHeiti;
+}

@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+.member_lf{ width:230px; border:1px solid #e5e5e5; margin-top:10px;}
+.member_nav .nav_home{ background:url(../images/member_home.jpg) repeat-x; width:100%; height:36px; color:#ffffff; line-height:30px; font-size:14px; border:1px solid #2556b8; cursor:pointer;}
+.member_nav .nav_home label{ color:#ffffff; padding:0 15px; font-weight:bold;cursor:pointer;}
+.erji_nav{ background:url(../images/member_title.jpg) repeat-x;height:36px; display:block; border-bottom:1px solid #e5e5e5;  border-top:1px solid #e5e5e5;line-height:36px; padding-left:15px; font-size:14px; font-weight:bold; position:relative;}
+.arrow{ background:url(../images/jiantou2.jpg) no-repeat; width:12px; height:8px; position:absolute; top:12px; right:15px;}
+.erji_nav_list{ margin:10px 0;}
+.erji_nav_list li{ line-height:28px; height:28px; padding:0 25px; color:#666;}
+.erji_nav_list li:hover,.erji_nav_list li.hover{ background:#96c0d5; color:#0033cc; cursor:pointer;}
+.collect{height:36px; border:1px solid #e5e5e5; font-size:14px; font-weight:bold; line-height:36px; padding:0 0 0 15px; cursor:pointer;}
+.collect:hover{ background:#96c0d5;}
+.member_rgt{ width:745px; margin-top:10px;}
+
+.member_rgt_hd{ font-size:14px; font-weight:bold; height:36px; line-height:36px; padding:0 10px; border:1px solid #e5e5e5;}
+.member_rgt_box{ padding:20px 0 20px 80px;border:1px solid #e5e5e5; border-top:none;}
+.member_rgt_box dl{ padding:10px 0; line-height:28px;}
+.member_rgt_box dl dt{ float:left; width:90px; text-align:right; margin:0 15px 0 0;}
+.member_rgt_box dl dd.xinbie label{ margin:0 20px 0 5px; }
+.member_txt{ height:28px; width:220px;}
+.member_rgt_box dl dd.mmember_txt2{ height:28px; width:120px; line-height:28px;display:inline-block;}
+.mmember_txt2{ width:90px;}
+.mmember_txt2,.mmember_txt3{ line-height:28px; height:28px; padding:5px;}
+.mmember_txt3{ width:120px;}
+.mmember_txt4{ height:50px; margin:10px 0 0 104px; width:300px;}
+.gx_btn{ width:100px; height:35px; background:#009f4b; color:#ffffff;-moz-border-radius:5px; -webkit-border-radius:5px;border-radius:5px; border:none; margin:0 0 0 105px; font-size:16px; font-weight:bold; cursor:pointer;}
+/*订单*/
+.myorders_box{ margin-top:10px;}
+.myorders{ width:100%; text-align:center;}
+.myorders th{ height:30px; background:#eeeeee; text-align:center; color:#999; border:1px solid #e5e5e5;}
+.myorders td{ padding:15px 10px; border:1px solid #e5e5e5;}
+.myorders td .jg{ color:#e70000;}
+.time_txt{ color:#999999;}
+.caozuo{ width:100px;}
+.caozuo_txt{ color:#0033cc; padding:5px;}
+.hym_btn{ background:url(../images/%E4%BC%9A%E5%91%98%E4%B8%AD%E5%BF%83_03.png) no-repeat; width:70px; height:21px; display:block; text-indent:-9999px; margin:5px 0 0 15px;}
+.zhuantai1{ color:#34add9;}
