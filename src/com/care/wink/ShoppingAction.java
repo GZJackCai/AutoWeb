@@ -109,14 +109,18 @@ public class ShoppingAction extends BaseAction {
 		ShoppingCart cart = initCart(request.getSession());
 
 		LinkedList<ShoppingCartItem> items = cart.getItems();
-		if (CollectionUtils.isEmpty(items))
+		if (CollectionUtils.isEmpty(items)){
+			response.sendRedirect(request.getContextPath()+"/jaxrs/shopping/viewCart");
 			return;
+		}
 
 		// 获取用户信息
 		User user = (User) request.getSession().getAttribute(UserAction.SESSION_USER);
 		if (user == null) {
+			//http://gaojie:8080/AutoWeb/jaxrs/shopping/commit
 			//跳转到登录页
-			response.sendRedirect(request.getContextPath());
+			response.sendRedirect(request.getContextPath()+"?redirUrl=/jaxrs/shopping/commit");
+			return;
 		}
 
 		UserAddressMapper addressMapper = getCtx().getBean(
@@ -131,7 +135,7 @@ public class ShoppingAction extends BaseAction {
 		
 		AutoWidgetMapper autoWidgetMapper = getCtx().getBean(
 				AutoWidgetMapper.class);
-
+		
 		// 获取用户选中的商品
 		for (ShoppingCartItem item : items) {
 			int wId = item.getId();
@@ -141,6 +145,8 @@ public class ShoppingAction extends BaseAction {
 			// 添加商品
 			order.add(autoWidget, count);
 		}
+		
+		
 		
 		request.getSession().setAttribute("order", order);
 		request.setAttribute("order", order);

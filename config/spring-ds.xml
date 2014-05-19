@@ -116,8 +116,8 @@
 	</bean>
 
 
-	<bean id="OrderMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="com.care.mybatis.dao.OrderMapper" />
+	<bean id="OrdersMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.care.mybatis.dao.OrdersMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 	

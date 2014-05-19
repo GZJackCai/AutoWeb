@@ -97,7 +97,7 @@
 					</a></td>
 					<td class="red">￥<%=item.getpPrice()%></td>
 					<td><%=item.getpQuantity()%></td>
-					<td class="bule"><a href="#">删除</a></td>
+					<td class="bule"><a href="javascript:removeItem(<%= item.getpId() %>)">删除</a></td>
 				</tr>
 
 				<%
@@ -132,7 +132,8 @@
 			if($(v).attr('checked') == 'checked'){
 				var invoice = $(v).attr('value');
 				var invoice_name = $("input[name='invoice_name']").val();
-				data[invoice] = invoice_name;
+				data['invoice'] = invoice;
+				data['invoice_name'] = invoice_name;
 				console.log(invoice, invoice_name);
 			}
 		});
@@ -143,18 +144,23 @@
 		
 	}
 	
+	function removeItem(id){
+		url = g_contextPath+"/jaxrs/order/removeItem/"+id;
+		$.getJSON(url, function(response){
+			console.log("removeItem:", response);
+		});
+	}
+	
 	function submit(){
-		var data = {};
+		var addrId  = null ;
 		$.each( $("input[name='addr']"), function(k, v){
 			if("checked" == $(v).attr("checked")){
-				data[addrId] = $(v).val();
+				addrId = $(v).val();
 			}
 		});
-		
-		url = g_contextPath+"/jaxrs/order/init";
-		$.post(url, data, function(response){
-			console.log(data, "->", response);
-		},"json");
+ 
+		url = g_contextPath+"/jaxrs/order/init?addrId="+addrId;
+		window.location.href = url;
 	}
 	</script>
 </body>

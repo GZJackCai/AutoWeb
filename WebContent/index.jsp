@@ -300,10 +300,20 @@
 		var msg = data.msg;
 		if(code == "1"||code == 1){
 			$("#loginDiv").html("<div style='text-align:center;'>欢迎您 , " + msg +"</div>");
+			var r_url = getQueryStringRegExp("redirUrl")
+			if (r_url){
+				window.location.href = g_contextPath+r_url
+			}
 		}else{
 			alert("登录失败");
 		}
 	}
+	
+	function getQueryStringRegExp(name)
+	{
+	    var reg = new RegExp("(^|\\?|&)"+ name +"=([^&]*)(\\s|&|$)", "i");  
+	    if (reg.test(location.href)) return unescape(RegExp.$2.replace(/\+/g, " ")); return "";
+	};
 </script>
 </body>
 </html>

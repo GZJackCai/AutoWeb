@@ -77,7 +77,7 @@
 		<!-- common -->
 		<table tableName="city" domainObjectName="City"></table>
 		<table tableName="country" domainObjectName="Country"></table>
-		<table tableName="order" domainObjectName="Order">
+		<table tableName="orders" domainObjectName="Orders">
 			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
 		</table>
 		<table tableName="order_item" domainObjectName="OrderItem"></table>

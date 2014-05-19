@@ -13,17 +13,17 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import com.care.domain.UserOrder;
-import com.care.mybatis.bean.Order;
 import com.care.mybatis.bean.OrderItem;
 import com.care.mybatis.bean.OrderNoSeqs;
+import com.care.mybatis.bean.Orders;
 import com.care.mybatis.dao.OrderItemMapper;
-import com.care.mybatis.dao.OrderMapper;
 import com.care.mybatis.dao.OrderNoSeqsMapper;
+import com.care.mybatis.dao.OrdersMapper;
 
 @Service
 public class OrderServiceImple implements OrderService {
 	@Resource
-	private OrderMapper orderMapper;
+	private OrdersMapper orderMapper;
 
 	@Resource
 	private OrderItemMapper orderItemMapper;
@@ -51,7 +51,7 @@ public class OrderServiceImple implements OrderService {
 		int id = orderNoSeqsMapper.insertSelective(record);
 		String strDate = new SimpleDateFormat(format).format(date);
 		String strUserId = String.format("%06d", userId);
-		String strId = String.format("%06d", id);
+		String strId = String.format("%06d", record.getId());
 		return strDate + strUserId + strId;
 
 	}
@@ -71,12 +71,14 @@ public class OrderServiceImple implements OrderService {
 
 		try {
 			Integer uId = uo.getUser().getId();
-			Order o = uo.getOrder();
+			Orders o = uo.getOrders();
 			o.setcId(uId);
 			String no = genSeqs(uId);
-			o.setNo(no);
-
-			orderMapper.insertSelective(uo.getOrder());
+			o.setpNo(no);
+			o.setTime(new Date());
+			
+			o.setTotalPrice(uo.getTotalPrice());
+			orderMapper.insertSelective(o);
 			Integer oId = o.getId();
 
 			for (OrderItem item : items) {

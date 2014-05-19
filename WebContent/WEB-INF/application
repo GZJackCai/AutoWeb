@@ -8,3 +8,4 @@ com.care.wink.WidgetAbsAction
 com.care.wink.ShoppingAction
 com.care.wink.AutoAction
 com.care.wink.OrderAction
+com.care.wink.PayAction

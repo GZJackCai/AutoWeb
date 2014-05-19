@@ -63,7 +63,7 @@
         	<span>总计：</span><strong class="jg">￥<%= cart.getTotalPrice() %></strong></div>
     </div>
     <div class="shbox_btn">
-    	<a class="jxgw_btn fl" href="#" target="_blank">继续购物</a>
+    	<a class="jxgw_btn fl" href="<%=request.getContextPath()%>"  >继续购物</a>
         <a class="settlement_btn fr" href="<%=request.getContextPath()%>/jaxrs/shopping/commit" target="_blank">去结算</a>
     </div>
 </div>

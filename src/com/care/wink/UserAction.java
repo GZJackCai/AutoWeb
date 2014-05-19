@@ -4,6 +4,7 @@ import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -48,7 +49,8 @@ public class UserAction extends BaseAction {
 	@POST
 	@Path("login")
 	@Produces(MediaType.APPLICATION_JSON)
-	public String login(@FormParam("email") String email, @FormParam("password") String password) {
+	public String login(@FormParam("email") String email, @FormParam("password") String password,
+			@PathParam("redirUrl")String redirUrl) {
 		RetValue rv = getRetValue("login");
 		try {
 			log.info("{}:email:{} password:{}", rv.getAction(), email, password);
@@ -57,6 +59,9 @@ public class UserAction extends BaseAction {
 				rv.setCode(1);
 				rv.setMsg(u.getNick());
 				request.getSession().setAttribute(UserAction.SESSION_USER, u);
+				if(redirUrl != null){
+					response.sendRedirect(redirUrl);					
+				}
 			}else{
 				rv.setCode(-1);
 				rv.setMsg("fail");
